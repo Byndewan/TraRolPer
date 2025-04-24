@@ -9,7 +9,9 @@
                 <h1>Fasilitas {{ $package->name }}</h1>
                 <div class="ml-auto">
                     <a href="{{ route('admin_package_index') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Kembali</a>
-                    <a href="{{ route('admin_package_amenity_trash') }}" class="btn btn-danger"><i class="fas fa-trash"></i> Sampah ( {{ $trashCount }} )</a>
+                    @if (auth('admin')->user()?->can('sampah.fasilitas.paket'))
+                        <a href="{{ route('admin_package_amenity_trash') }}" class="btn btn-danger"><i class="fas fa-trash"></i> Sampah ( {{ $trashCount }} )</a>
+                    @endif
                 </div>
             </div>
             <div class="section-body">
@@ -24,7 +26,9 @@
                                             <tr>
                                                 <th style="width: 1%; white-space: nowrap;">SL</th>
                                                 <th>Nama</th>
+                                                @if (auth('admin')->user()?->can('lihat.galery.fasilitas') || auth('admin')->user()?->can('hapus.fasilitas.paket'))
                                                 <th style="width: 1%; white-space: nowrap;">Aksi</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -34,14 +38,19 @@
                                             <td>
                                                 {{ $item->amenities_name }}
                                             </td>
+                                            @if (auth('admin')->user()?->can('lihat.galery.fasilitas') || auth('admin')->user()?->can('hapus.fasilitas.paket'))
                                             <td style="width: 1%; white-space: nowrap;" class="pt_10 pb_10 text-end">
-                                                <span class="btn btn-warning btn-sm mr-3" style="margin-right: 10px" title="Jumlah Foto"> {{ $item->photo->count() }} </span>
-                                                <a href="{{ route('package_amenity_photos', ['package_id' => $package->id, 'amenity_id' => $item->id]) }}" class="btn btn-primary" style="margin-right: 5px" title="Tambah Foto">
+                                                @if (auth('admin')->user()?->can('lihat.galery.fasilitas'))
+                                                    <span class="btn btn-warning btn-sm mr-3" style="margin-right: 10px" title="Jumlah Foto"> {{ $item->photo->count() }} </span>
+                                                    <a href="{{ route('package_amenity_photos', ['package_id' => $package->id, 'amenity_id' => $item->id]) }}" class="btn btn-primary" style="margin-right: 5px" title="Tambah Foto">
                                                     <i class="fas fa-images" title="Tambah Foto"></i>
-                                                </a>
-
-                                                <a href="{{ route('package_amenities_delete', $item->id) }}" class="btn btn-danger" onClick="return confirm('Fasilitas ini akan dipindahkan ke sampah. Apakah Anda yakin?');"><i class="fas fa-trash"></i></a>
+                                                    </a>
+                                                @endif
+                                                @if (auth('admin')->user()?->can('hapus.fasilitas.paket'))
+                                                    <a href="{{ route('package_amenities_delete', $item->id) }}" class="btn btn-danger" onClick="return confirm('Fasilitas ini akan dipindahkan ke sampah. Apakah Anda yakin?');"><i class="fas fa-trash"></i></a>
+                                                @endif
                                             </td>
+                                            @endif
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -55,7 +64,9 @@
                                             <tr>
                                                 <th style="width: 1%; white-space: nowrap;">SL</th>
                                                 <th>Nama</th>
+                                                @if (auth('admin')->user()?->can('hapus.fasilitas.paket'))
                                                 <th style="width: 1%; white-space: nowrap;">Aksi</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -65,9 +76,11 @@
                                             <td>
                                                 {{ $item->amenities_name }}
                                             </td>
-                                            <td style="width: 1%; white-space: nowrap;" class="pt_10 pb_10 text-end">
-                                                <a href="{{ route('package_amenities_delete', $item->id) }}" class="btn btn-danger" onClick="return confirm('Fasilitas ini akan dipindahkan ke sampah. Apakah Anda yakin?');"><i class="fas fa-trash"></i></a>
-                                            </td>
+                                            @if (auth('admin')->user()?->can('hapus.fasilitas.paket'))
+                                                <td style="width: 1%; white-space: nowrap;" class="pt_10 pb_10 text-end">
+                                                    <a href="{{ route('package_amenities_delete', $item->id) }}" class="btn btn-danger" onClick="return confirm('Fasilitas ini akan dipindahkan ke sampah. Apakah Anda yakin?');"><i class="fas fa-trash"></i></a>
+                                                </td>
+                                            @endif
                                         </tr>
                                             @endforeach
                                         </tbody>
@@ -94,10 +107,12 @@
                                             <option value="exclude">Tidak Termasuk</option>
                                         </select>
                                     </div>
+                                    @if (auth('admin')->user()?->can('tambah.fasilitas.paket'))
                                     <div class="mb-3">
                                         <label class="form-label"></label>
                                         <button type="submit" class="btn btn-primary">Simpan</button>
                                     </div>
+                                    @endif
                                 </form>
                             </div>
                         </div>

@@ -32,12 +32,19 @@
                     Total Pemasukan: <strong>Rp {{ number_format($bookings->sum('paid_amount'), 0, ',', '.') }}</strong>
                 </div>
                 <div class="align-items-center">
-                    <a href="{{ route('admin.bookings.export.pdf', request()->only(['start_date', 'end_date'])) }}" class="btn btn-danger mb-3">
-                        <i class="fas fa-file-pdf"></i> Simpan Ke PDF
-                    </a>
+
+                    @if (auth('admin')->user()?->can('simpanpdf.laporan'))
+                        <a href="{{ route('admin.bookings.export.pdf', request()->only(['start_date', 'end_date'])) }}" class="btn btn-danger mb-3">
+                            <i class="fas fa-file-pdf"></i> Simpan Ke PDF
+                        </a>
+                    @endif
+
+                    @if (auth('admin')->user()?->can('simpanexcel.laporan'))
                     <a href="{{ route('admin.bookings.export.excel', request()->only(['start_date', 'end_date'])) }}" class="btn btn-success mb-3">
                         <i class="fas fa-file-excel"></i> Simpan Ke Excel
                     </a>
+                    @endif
+
                 </div>
             </div>
             @endif
@@ -98,9 +105,11 @@
                                                         <span class="badge badge-danger">Ditolak</span>
                                                     @endif
                                                 </td>
+
                                                 <td>
                                                     <a href="{{ route('admin_tour_invoice',$data->invoice_no) }}" class="badge badge-primary text-decoration-none" target="_blank">Lihat Faktur</a>
                                                 </td>
+                                                
                                             </tr>
                                             @endforeach
                                         </tbody>

@@ -149,9 +149,9 @@ Route::middleware(['admin:admin'])
 
         Route::get('/booking/filter', [AdminBookingController::class, 'filter'])->name('admin_booking_filter');
 
-        Route::get('/admin/bookings/export/pdf', [AdminBookingController::class, 'exportPdf'])->name('admin.bookings.export.pdf');
+        Route::get('/admin/bookings/export/pdf', [AdminBookingController::class, 'exportPdf'])->name('admin.bookings.export.pdf')->middleware('permission:simpanpdf.laporan,admin');
 
-        Route::get('/admin/bookings/export/excel', [AdminBookingController::class, 'exportExcel'])->name('admin.bookings.export.excel');
+        Route::get('/admin/bookings/export/excel', [AdminBookingController::class, 'exportExcel'])->name('admin.bookings.export.excel')->middleware('permission:simpanexcel.laporan,admin');
 
         // Profile Section
         Route::get('/profile', [AdminAuthController::class, 'profile'])->name('admin_profile');
@@ -167,7 +167,7 @@ Route::middleware(['admin:admin'])
         Route::get('/sliders/edit/{id}', [AdminSliderController::class, 'edit'])->name('admin_slider_edit')->middleware('permission:edit.slider,admin');
 
         Route::post('/sliders/edit/{id}', [AdminSliderController::class, 'edit_submit'])->name('admin_slider_edit_submit');
-        Route::get('/sliders/delete/{id}', [AdminSliderController::class, 'delete'])->name('admin_slider_delete');
+        Route::get('/sliders/delete/{id}', [AdminSliderController::class, 'delete'])->name('admin_slider_delete')->middleware('permission:hapus.slider,admin');
 
         // Welcome Items Section
         Route::get('/welcome-items/index', [AdminWelcomeItemController::class, 'index'])->name('admin_welcome_item_index')->middleware('permission:lihat.welcome,admin');
@@ -179,7 +179,7 @@ Route::middleware(['admin:admin'])
         Route::post('/features/create', [AdminFeatureController::class, 'create_submit'])->name('admin_feature_create_submit');
         Route::get('/features/edit/{id}', [AdminFeatureController::class, 'edit'])->name('admin_feature_edit')->middleware('permission:edit.fitur,admin');
         Route::post('/features/edit/{id}', [AdminFeatureController::class, 'edit_submit'])->name('admin_feature_edit_submit');
-        Route::get('/features/delete/{id}', [AdminFeatureController::class, 'delete'])->name('admin_feature_delete');
+        Route::get('/features/delete/{id}', [AdminFeatureController::class, 'delete'])->name('admin_feature_delete')->middleware('permission:hapus.fitur,admin');
 
         // Counter Items Section
         Route::get('/counter-items/index', [AdminCounterItemController::class, 'index'])->name('admin_counter_item_index')->middleware('permission:lihat.counter,admin');
@@ -191,7 +191,7 @@ Route::middleware(['admin:admin'])
         Route::post('/testimonials/create', [AdminTestimonialController::class, 'create_submit'])->name('admin_testimonial_create_submit');
         Route::get('/testimonials/edit/{id}', [AdminTestimonialController::class, 'edit'])->name('admin_testimonial_edit')->middleware('permission:edit.testimoni,admin');
         Route::post('/testimonials/edit/{id}', [AdminTestimonialController::class, 'edit_submit'])->name('admin_testimonial_edit_submit');
-        Route::get('/testimonials/delete/{id}', [AdminTestimonialController::class, 'delete'])->name('admin_testimonial_delete');
+        Route::get('/testimonials/delete/{id}', [AdminTestimonialController::class, 'delete'])->name('admin_testimonial_delete')->middleware('permission:hapus.testimoni,admin');
 
         // Team Members Section
         Route::get('/team-members/index', [AdminTeamMemberController::class, 'index'])->name('admin_team_member_index')->middleware('permission:lihat.anggota,admin');
@@ -199,7 +199,7 @@ Route::middleware(['admin:admin'])
         Route::post('/team-members/create', [AdminTeamMemberController::class, 'create_submit'])->name('admin_team_member_create_submit');
         Route::get('/team-members/edit/{id}', [AdminTeamMemberController::class, 'edit'])->name('admin_team_member_edit')->middleware('permission:edit.anggota,admin');
         Route::post('/team-members/edit/{id}', [AdminTeamMemberController::class, 'edit_submit'])->name('admin_team_member_edit_submit');
-        Route::get('/team-members/delete/{id}', [AdminTeamMemberController::class, 'delete'])->name('admin_team_member_delete');
+        Route::get('/team-members/delete/{id}', [AdminTeamMemberController::class, 'delete'])->name('admin_team_member_delete')->middleware('permission:hapus.anggota,admin');
 
         // Faqs Section
         Route::get('/faqs/index', [AdminFaqController::class, 'index'])->name('admin_faq_index')->middleware('permission:lihat.pertanyaan,admin');
@@ -207,7 +207,7 @@ Route::middleware(['admin:admin'])
         Route::post('/faqs/create', [AdminFaqController::class, 'create_submit'])->name('admin_faq_create_submit');
         Route::get('/faqs/edit/{id}', [AdminFaqController::class, 'edit'])->name('admin_faq_edit')->middleware('permission:edit.pertanyaan,admin');
         Route::post('/faqs/edit/{id}', [AdminFaqController::class, 'edit_submit'])->name('admin_faq_edit_submit');
-        Route::get('/faqs/delete/{id}', [AdminFaqController::class, 'delete'])->name('admin_faq_delete');
+        Route::get('/faqs/delete/{id}', [AdminFaqController::class, 'delete'])->name('admin_faq_delete')->middleware('permission:hapus.pertanyaan,admin');
 
         // Blog Categories Section
         Route::get('/blog-categories/index', [AdminBlogCategoryController::class, 'index'])->name('admin_blog_category_index')->middleware('permission:lihat.blogKategori,admin');
@@ -215,7 +215,7 @@ Route::middleware(['admin:admin'])
         Route::post('/blog-categories/create', [AdminBlogCategoryController::class, 'create_submit'])->name('admin_blog_category_create_submit');
         Route::get('/blog-categories/edit/{id}', [AdminBlogCategoryController::class, 'edit'])->name('admin_blog_category_edit')->middleware('permission:edit.blogKategori,admin');
         Route::post('/blog-categories/edit/{id}', [AdminBlogCategoryController::class, 'edit_submit'])->name('admin_blog_category_edit_submit');
-        Route::get('/blog-categories/delete/{id}', [AdminBlogCategoryController::class, 'delete'])->name('admin_blog_category_delete');
+        Route::get('/blog-categories/delete/{id}', [AdminBlogCategoryController::class, 'delete'])->name('admin_blog_category_delete')->middleware('permission:hapus.blogKategori,admin');
 
         // Posts Section
         Route::get('/posts/index', [AdminPostController::class, 'index'])->name('admin_post_index')->middleware('permission:lihat.blogPost,admin');
@@ -223,7 +223,7 @@ Route::middleware(['admin:admin'])
         Route::post('/posts/create', [AdminPostController::class, 'create_submit'])->name('admin_post_create_submit');
         Route::get('/posts/edit/{id}', [AdminPostController::class, 'edit'])->name('admin_post_edit')->middleware('permission:edit.blogPost,admin');
         Route::post('/posts/edit/{id}', [AdminPostController::class, 'edit_submit'])->name('admin_post_edit_submit');
-        Route::get('/posts/delete/{id}', [AdminPostController::class, 'delete'])->name('admin_post_delete');
+        Route::get('/posts/delete/{id}', [AdminPostController::class, 'delete'])->name('admin_post_delete')->middleware('permission:hapus.blogPost,admin');
 
         // Destinations Section
         Route::get('/destinations/index', [AdminDestinationController::class, 'index'])->name('admin_destination_index')->middleware('permission:lihat.destinasi,admin');
@@ -231,17 +231,17 @@ Route::middleware(['admin:admin'])
         Route::post('/destinations/create', [AdminDestinationController::class, 'create_submit'])->name('admin_destination_create_submit');
         Route::get('/destinations/edit/{id}', [AdminDestinationController::class, 'edit'])->name('admin_destination_edit')->middleware('permission:edit.destinasi,admin');
         Route::post('/destinations/edit/{id}', [AdminDestinationController::class, 'edit_submit'])->name('admin_destination_edit_submit');
-        Route::get('/destinations/delete/{id}', [AdminDestinationController::class, 'delete'])->name('admin_destination_delete');
+        Route::get('/destinations/delete/{id}', [AdminDestinationController::class, 'delete'])->name('admin_destination_delete')->middleware('permission:hapus.destinasi,admin');
 
         // Destinations Photo Section
         Route::get('/destination-photos/{id}', [AdminDestinationController::class, 'destination_photos'])->name('destination_photos')->middleware('permission:lihat.galeryFoto.destinasi,admin');
         Route::post('/destination-photos-submit/{id}', [AdminDestinationController::class, 'destination_photo_submit'])->name('destination_photo_submit');
-        Route::get('/destination-photo-delete/{id}', [AdminDestinationController::class, 'destination_photo_delete'])->name('destination_photo_delete');
+        Route::get('/destination-photo-delete/{id}', [AdminDestinationController::class, 'destination_photo_delete'])->name('destination_photo_delete')->middleware('permission:hapus.galeryFoto.destinasi,admin');
 
         // Destinations Video Section
         Route::get('/destination-videos/{id}', [AdminDestinationController::class, 'destination_videos'])->name('destination_videos')->middleware('permission:lihat.galeryVideo.destinasi,admin');
         Route::post('/destination-videos-submit/{id}', [AdminDestinationController::class, 'destination_video_submit'])->name('destination_video_submit');
-        Route::get('/destination-video-delete/{id}', [AdminDestinationController::class, 'destination_video_delete'])->name('destination_video_delete');
+        Route::get('/destination-video-delete/{id}', [AdminDestinationController::class, 'destination_video_delete'])->name('destination_video_delete')->middleware('permission:hapus.galeryVideo.destinasi,admin');
 
         // Packages Section
         Route::get('/packages/index', [AdminPackageController::class, 'index'])->name('admin_package_index')->middleware('permission:lihat.paket,admin');
@@ -249,40 +249,40 @@ Route::middleware(['admin:admin'])
         Route::post('/packages/create', [AdminpackageController::class, 'create_submit'])->name('admin_package_create_submit');
         Route::get('/packages/edit/{id}', [AdminpackageController::class, 'edit'])->name('admin_package_edit')->middleware('permission:edit.paket,admin');
         Route::post('/packages/edit/{id}', [AdminpackageController::class, 'edit_submit'])->name('admin_package_edit_submit');
-        Route::get('/packages/delete/{id}', [AdminpackageController::class, 'delete'])->name('admin_package_delete');
+        Route::get('/packages/delete/{id}', [AdminpackageController::class, 'delete'])->name('admin_package_delete')->middleware('permission:hapus.paket,admin');
 
         // Package Amenity Section
         Route::get('/package-amenities/{id}', [AdminPackageController::class, 'package_amenities'])->name('package_amenities')->middleware('permission:lihat.fasilitas.paket,admin');
         Route::post('/package-amenities-submit/{id}', [AdminPackageController::class, 'package_amenities_submit'])->name('package_amenities_submit');
-        Route::get('/package-amenities-delete/{id}', [AdminPackageController::class, 'package_amenities_delete'])->name('package_amenities_delete');
+        Route::get('/package-amenities-delete/{id}', [AdminPackageController::class, 'package_amenities_delete'])->name('package_amenities_delete')->middleware('permission:hapus.fasilitas,admin');
 
 
 
         // Package Amenity Photo Section
         Route::get('/package-amenities/{package_id}/photos/{amenity_id}', [AdminPackageController::class, 'package_amenity_photos'])->name('package_amenity_photos')->middleware('permission:lihat.galery.fasilitas,admin');
         Route::post('/package-amenities-submit/{package_id}/photos/{amenity_id}', [AdminPackageController::class, 'package_amenity_photos_submit'])->name('package_amenity_photos_submit');
-        Route::get('/package-amenities/photos/delete/{id}', [AdminPackageController::class, 'package_amenity_photos_delete'])->name('package_amenity_photos_delete');
+        Route::get('/package-amenities/photos/delete/{id}', [AdminPackageController::class, 'package_amenity_photos_delete'])->name('package_amenity_photos_delete')->middleware('permission:hapus.galery.fasilitas,admin');
 
 
         // Package itinerary Section
         Route::get('/package-itineraries/{id}', [AdminPackageController::class, 'package_itineraries'])->name('package_itineraries')->middleware('permission:lihat.rencana,admin');
         Route::post('/package-itineraries-submit/{id}', [AdminPackageController::class, 'package_itineraries_submit'])->name('package_itineraries_submit');
-        Route::get('/package-itineraries-delete/{id}', [AdminPackageController::class, 'package_itineraries_delete'])->name('package_itineraries_delete');
+        Route::get('/package-itineraries-delete/{id}', [AdminPackageController::class, 'package_itineraries_delete'])->name('package_itineraries_delete')->middleware('permission:hapus.rencana,admin');
 
         // Package Photos Section
         Route::get('/package-photos/{id}', [AdminPackageController::class, 'package_photos'])->name('package_photos')->middleware('permission:lihat.galeryFoto.paket,admin');
         Route::post('/package-photos-submit/{id}', [AdminPackageController::class, 'package_photos_submit'])->name('package_photos_submit');
-        Route::get('/package-photos-delete/{id}', [AdminPackageController::class, 'package_photos_delete'])->name('package_photos_delete');
+        Route::get('/package-photos-delete/{id}', [AdminPackageController::class, 'package_photos_delete'])->name('package_photos_delete')->middleware('permission:hapus.galeryFoto.paket,admin');
 
         // Package Videos Section
         Route::get('/package-videos/{id}', [AdminPackageController::class, 'package_videos'])->name('package_videos')->middleware('permission:lihat.galeryVideo.paket,admin');
         Route::post('/package-videos-submit/{id}', [AdminPackageController::class, 'package_videos_submit'])->name('package_videos_submit');
-        Route::get('/package-videos-delete/{id}', [AdminPackageController::class, 'package_videos_delete'])->name('package_videos_delete');
+        Route::get('/package-videos-delete/{id}', [AdminPackageController::class, 'package_videos_delete'])->name('package_videos_delete')->middleware('permission:hapus.galeryVideo.paket,admin');
 
         // Package Faqs Section
         Route::get('/package-faqs/{id}', [AdminPackageController::class, 'package_faqs'])->name('package_faqs')->middleware('permission:lihat.pertanyaan.paket,admin');
         Route::post('/package-faqs-submit/{id}', [AdminPackageController::class, 'package_faqs_submit'])->name('package_faqs_submit');
-        Route::get('/package-faqs-delete/{id}', [AdminPackageController::class, 'package_faqs_delete'])->name('package_faqs_delete');
+        Route::get('/package-faqs-delete/{id}', [AdminPackageController::class, 'package_faqs_delete'])->name('package_faqs_delete')->middleware('permission:hapus.pertanyaan.paket,admin');
 
         // Amenities Section
         // Route::get('/amenities/index', [AdminAmenityController::class, 'index'])->name('admin_amenity_index')->middleware('permission:lihat.fasilitas.paket,admin');
@@ -298,16 +298,16 @@ Route::middleware(['admin:admin'])
         Route::post('/tours/create', [AdminTourController::class, 'create_submit'])->name('admin_tour_create_submit');
         Route::get('/tours/edit/{id}', [AdminTourController::class, 'edit'])->name('admin_tour_edit')->middleware('permission:edit.tur,admin');
         Route::post('/tours/edit/{id}', [AdminTourController::class, 'edit_submit'])->name('admin_tour_edit_submit');
-        Route::get('/tours/delete/{id}', [AdminTourController::class, 'delete'])->name('admin_tour_delete');
+        Route::get('/tours/delete/{id}', [AdminTourController::class, 'delete'])->name('admin_tour_delete')->middleware('permission:hapus.tur,admin');
 
         Route::get('/tours/booking/{tour_id}/{package_id}', [AdminTourController::class, 'tour_booking'])->name('admin_tour_booking')->middleware('permission:lihat.infoPemesanan,admin');
-        Route::get('/Tours/Booking-delete/{id}', [AdminTourController::class, 'tour_booking_delete'])->name('admin_tour_booking_delete');
+        Route::get('/Tours/Booking-delete/{id}', [AdminTourController::class, 'tour_booking_delete'])->name('admin_tour_booking_delete')->middleware('permission:hapus.infoPemesanan,admin');
         Route::get('/Tours/booking-approve/{id}', [AdminTourController::class, 'tour_booking_approve'])->name('admin_tour_booking_approve')->middleware('permission:approve.infoPemesanan,admin');
         Route::get('/Tours/invoice/{invoice_no}', [AdminTourController::class, 'tour_invoice'])->name('admin_tour_invoice')->middleware('permission:infofaktur.infoPemesanan,admin');
 
         // Reviews Section
         Route::get('/reviews/index', [AdminReviewController::class, 'index'])->name('admin_review_index')->middleware('permission:lihat.ulasan,admin');
-        Route::get('/reviews/delete/{id}', [AdminReviewController::class, 'delete'])->name('admin_review_delete');
+        Route::get('/reviews/delete/{id}', [AdminReviewController::class, 'delete'])->name('admin_review_delete')->middleware('permission:hapus.ulasan,admin');
 
         // Users Section
         Route::get('/users', [AdminUserController::class, 'users'])->name('admin_users')->middleware('permission:lihat.pengguna,admin');
@@ -315,7 +315,7 @@ Route::middleware(['admin:admin'])
         Route::post('/users/create/submit', [AdminUserController::class, 'user_create_submit'])->name('admin_user_create_submit');
         Route::get('/users/edit/{id}', [AdminUserController::class, 'user_edit'])->name('admin_user_edit')->middleware('permission:edit.pengguna,admin');
         Route::post('/users/edit/{id}', [AdminUserController::class, 'user_edit_submit'])->name('admin_user_edit_submit');
-        Route::get('/users/delete/{id}', [AdminUserController::class, 'user_delete'])->name('admin_user_delete');
+        Route::get('/users/delete/{id}', [AdminUserController::class, 'user_delete'])->name('admin_user_delete')->middleware('permission:hapus.pengguna,admin');
 
         Route::get('/message', [AdminUserController::class, 'message'])->name('admin_message')->middleware('permission:lihat.message.pengguna,admin');
         Route::get('/message-detail/{id}', [AdminUserController::class, 'message_detail'])->name('admin_message_detail')->middleware('permission:buka.message.pengguna,admin');
@@ -325,7 +325,7 @@ Route::middleware(['admin:admin'])
         Route::get('/subscribers', [AdminSubscriberController::class, 'subscribers'])->name('admin_subscribers')->middleware('permission:lihat.pengikut,admin');
         Route::get('/subscriber-send-email', [AdminSubscriberController::class, 'send_email'])->name('admin_subscriber_send_email');
         Route::post('/subscriber-send-email-submit', [AdminSubscriberController::class, 'send_email_submit'])->name('admin_subscriber_send_email_submit');
-        Route::get('/subscriber/delete/{id}', [AdminSubscriberController::class, 'subscriber_delete'])->name('admin_subscriber_delete');
+        Route::get('/subscriber/delete/{id}', [AdminSubscriberController::class, 'subscriber_delete'])->name('admin_subscriber_delete')->middleware('permission:hapus.pengikut,admin');
 
         // Home Items Section
         Route::get('/home-page-items/index', [AdminHomeItemController::class, 'index'])->name('admin_home_page_item_index')->middleware('permission:lihat.beranda,admin');
@@ -350,12 +350,12 @@ Route::middleware(['admin:admin'])
         // Sponsor Section
         Route::get('/sponsor/index', [AdminSponsorController::class, 'index'])->name('sponsor_index')->middleware('permission:lihat.sponsor,admin');
         Route::post('/sponsor-submit', [AdminSponsorController::class, 'sponsor_submit'])->name('sponsor_submit');
-        Route::get('/sponsor-delete/{id}', [AdminSponsorController::class, 'sponsor_delete'])->name('sponsor_delete');
+        Route::get('/sponsor-delete/{id}', [AdminSponsorController::class, 'sponsor_delete'])->name('sponsor_delete')->middleware('permission:hapus.sponsor,admin');
 
-        // Comment Section
+        // Comment Blog Section
         Route::get('/comment/index', [AdminCommentController::class, 'index'])->name('comment.index')->middleware('permission:lihat.commentBlog,admin');
         Route::post('/comment-approve/{id}', [AdminCommentController::class, 'approve'])->name('comment.approve');
-        Route::get('/comment-delete/{id}', [AdminCommentController::class, 'delete'])->name('comment.delete');
+        Route::get('/comment-delete/{id}', [AdminCommentController::class, 'delete'])->name('comment.delete')->middleware('permission:hapus.commentBlog,admin');
 
         // LOG Section
         Route::get('/log/activity/admin', [LogActivityController::class, 'indexAdmin'])->middleware('permission:lihat.logAktivitas.admin,admin');
@@ -363,7 +363,7 @@ Route::middleware(['admin:admin'])
 
 
 
-        Route::resource('roles', RoleController::class);
+        Route::resource('roles', RoleController::class)->middleware('permission:Perizinan,admin');
         Route::resource('permissions', PermissionController::class);
 
         Route::get('assign-role', [RoleController::class, 'assignRoleForm'])->name('assign.role.form');

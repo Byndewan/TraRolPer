@@ -9,7 +9,9 @@
                 <h1>Video {{ $destination->name }}</h1>
                 <div class="ml-auto">
                     <a href="{{ route('admin_destination_index') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Kembali</a>
-                    <a href="{{ route('admin_destination_video_trash') }}" class="btn btn-danger"><i class="fas fa-trash"></i> Sampah ( {{ $trashCount }} )</a>
+                    @if (auth('admin')->user()?->can('hapus.galeryVideo.destinasi'))
+                        <a href="{{ route('admin_destination_video_trash') }}" class="btn btn-danger"><i class="fas fa-trash"></i> Sampah ( {{ $trashCount }} )</a>
+                    @endif
                 </div>
             </div>
             <div class="section-body">
@@ -23,7 +25,9 @@
                                             <tr>
                                                 <th>SL</th>
                                                 <th>Video</th>
-                                                <th>Action</th>
+                                                @if (auth('admin')->user()?->can('hapus.galeryFoto.destinasi'))
+                                                    <th>Aksi</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -39,9 +43,11 @@
                                                         allowfullscreen>
                                                     </iframe>
                                             </td>
+                                            @if (auth('admin')->user()?->can('hapus.galeryVideo.destinasi'))
                                             <td class="pt_10 pb_10">
                                                 <a href="{{ route('destination_video_delete', $destination_video->id) }}" class="btn btn-danger" onClick="return confirm('Destination Video will be move to trash. are you sure?');"><i class="fas fa-trash"></i></a>
                                             </td>
+                                            @endif
                                         </tr>
                                             @endforeach
                                         </tbody>
@@ -60,10 +66,12 @@
                                         <label class="form-label">Video</label>
                                         <input type="text" name="video" class="form-control">
                                     </div>
+                                    @if (auth('admin')->user()?->can('tambah.galeryFoto.destinasi'))
                                     <div class="mb-3">
                                         <label class="form-label"></label>
                                         <button type="submit" class="btn btn-primary">Tambah</button>
                                     </div>
+                                    @endif
                                 </form>
                             </div>
                         </div>

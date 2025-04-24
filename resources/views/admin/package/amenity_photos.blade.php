@@ -22,7 +22,9 @@
                                             <tr>
                                                 <th>SL</th>
                                                 <th>Foto</th>
-                                                <th>Aksi</th>
+                                                @if (auth('admin')->user()?->can('hapus.galery.fasilitas'))
+                                                    <th>Aksi</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -32,11 +34,13 @@
                                             <td>
                                                 <img src="{{ asset('uploads/'.$package_photo->photo) }}" class="w_150">
                                             </td>
+                                            @if (auth('admin')->user()?->can('hapus.galery.fasilitas'))
                                             <td class="pt_10 pb_10">
                                                 <a href="{{ route('package_amenity_photos_delete', $package_amenities->id) }}" class="btn btn-danger" onClick="return confirm('Foto akan di hapus secara permanen!. Apakah anda yakin?');">
                                                     <i class="fas fa-trash"></i>
-                                                </a>                                                
+                                                </a>
                                             </td>
+                                            @endif
                                         </tr>
                                             @endforeach
                                         </tbody>
@@ -65,10 +69,12 @@
                                                     <div class="preview-container" id="previewContainer1"></div>
                                                 </div></div>
                                     </div>
+                                    @if (auth('admin')->user()?->can('tambah.galery.fasilitas'))
                                     <div class="mb-3">
                                         <label class="form-label"></label>
                                         <button type="submit" class="btn btn-primary">Simpan</button>
                                     </div>
+                                    @endif
                                 </form>
                             </div>
                         </div>

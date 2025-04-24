@@ -86,10 +86,12 @@
                                             </option>
                                         </select>
                                     </div>
+                                    @if (auth('admin')->user()?->can('edit.welcome'))
                                     <div class="mb-3">
                                         <label class="form-label"></label>
                                         <button type="submit" class="btn btn-primary">Perbarui</button>
                                     </div>
+                                    @endif
                             </div>
                         </div>
                         </form>

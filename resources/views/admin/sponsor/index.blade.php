@@ -8,7 +8,9 @@
             <div class="section-header justify-content-between">
                 <h1>Sponsor</h1>
                 <div class="ml-auto">
+                    @if (auth('admin')->user()?->can('sampah.sponsor'))
                     <a href="{{ route('admin_sponsor_trash') }}" class="btn btn-danger"><i class="fas fa-trash"></i> Sampah ( {{ $trashCount }} )</a>
+                    @endif
                 </div>
             </div>
             <div class="section-body">
@@ -22,7 +24,9 @@
                                             <tr>
                                                 <th>SL</th>
                                                 <th>Foto</th>
+                                                @if (auth('admin')->user()?->can('hapus.sponsor'))
                                                 <th>Aksi</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -31,10 +35,13 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>
                                                 <img src="{{ asset('uploads/'.$sponsor_photo->photo) }}" class="w_150">
+
                                             </td>
+                                            @if (auth('admin')->user()?->can('sampah.sponsor'))
                                             <td class="pt_10 pb_10">
                                                 <a href="{{ route('sponsor_delete', $sponsor_photo->id) }}" class="btn btn-danger" onClick="return confirm('Sponsor ini akan dipindahkan ke sampah. Apakah Anda yakin?');"><i class="fas fa-trash"></i></a>
                                             </td>
+                                            @endif
                                         </tr>
                                             @endforeach
                                         </tbody>
@@ -61,10 +68,12 @@
                                                     <div class="preview-container" id="previewContainer1"></div>
                                                 </div></div>
                                     </div>
+                                    @if (auth('admin')->user()?->can('tambah.sponsor'))
                                     <div class="mb-3">
                                         <label class="form-label"></label>
                                         <button type="submit" class="btn btn-primary">Simpan</button>
                                     </div>
+                                    @endif
                                 </form>
                             </div>
                         </div>

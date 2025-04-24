@@ -162,10 +162,12 @@
                                         </select>
                                     </div>
 
+                                    @if (auth('admin')->user()?->can('edit.beranda'))
                                     <div class="mb-3">
                                         <label class="form-label"></label>
                                         <button type="submit" class="btn btn-primary">perbarui</button>
                                     </div>
+                                    @endif
                             </div>
                         </div>
                         </form>

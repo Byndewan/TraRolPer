@@ -155,12 +155,6 @@
 
             </div>
 
-            {{-- @php
-                $permissions = auth('admin')->user()?->getAllPermissions();
-                dd($permissions->pluck('name'));
-            @endphp --}}
-
-
             <form method="GET" action="{{ route('admin_dashboard') }}" class="mb-3">
                 <select name="year" onchange="this.form.submit()" class="form-control w-auto d-inline-block">
                     @for ($y = now()->year; $y >= 2020; $y--)

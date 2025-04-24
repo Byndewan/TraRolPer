@@ -8,8 +8,14 @@
                 <div class="section-header justify-content-between">
                     <h1>Blog Post</h1>
                     <div class="ml-auto">
-                        <a href="{{ route('admin_post_create') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Blog Post</a>
-                        <a href="{{ route('admin_blog_trash') }}" class="btn btn-danger"><i class="fas fa-trash"></i> Sampah ( {{ $trashCount }} )</a>
+
+                        @if (auth('admin')->user()?->can('tambah.blogPost'))
+                            <a href="{{ route('admin_post_create') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Blog Post</a>
+                        @endif
+                        @if (auth('admin')->user()?->can('sampah.blogPost'))
+                            <a href="{{ route('admin_blog_trash') }}" class="btn btn-danger"><i class="fas fa-trash"></i> Sampah ( {{ $trashCount }} )</a>
+                        @endif
+
                     </div>
                 </div>
                 <div class="section-body">
@@ -25,7 +31,9 @@
                                                     <th>Foto</th>
                                                     <th>Judul</th>
                                                     <th>kategori</th>
+                                                    @if (auth('admin')->user()?->can('edit.blogPost') || auth('admin')->user()?->can('hapus.blogPost'))
                                                     <th>Aksi</th>
+                                                    @endif
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -39,10 +47,21 @@
                                                     <td>
                                                         {{ $post->blog_category->name }}
                                                     </td>
-                                                    <td class="pt_10 pb_10">
-                                                        <a href="{{ route('admin_post_edit', $post->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                                        <a href="{{ route('admin_post_delete', $post->id) }}" class="btn btn-danger" onClick="return confirm('Blog will be move to trash. Are you sure?');"><i class="fas fa-trash"></i></a>
-                                                    </td>
+
+                                                    @if (auth('admin')->user()?->can('edit.blogPost') || auth('admin')->user()?->can('hapus.blogPost'))
+                                                        <td class="pt_10 pb_10">
+
+                                                            @if (auth('admin')->user()?->can('edit.blogPost'))
+                                                                <a href="{{ route('admin_post_edit', $post->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                                            @endif
+
+                                                            @if (auth('admin')->user()?->can('hapus.blogPost'))
+                                                                <a href="{{ route('admin_post_delete', $post->id) }}" class="btn btn-danger" onClick="return confirm('Blog will be move to trash. Are you sure?');"><i class="fas fa-trash"></i></a>
+                                                            @endif
+                                                            
+                                                        </td>
+                                                    @endif
+
                                                 </tr>
                                                 @endforeach
                                             </tbody>

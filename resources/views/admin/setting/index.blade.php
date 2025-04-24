@@ -131,10 +131,12 @@
                                         <label class="form-label">Hak Cipta *</label>
                                         <input type="text" name="copyright" class="form-control" value="{{ $setting->copyright }}">
                                     </div>
+                                    @if (auth('admin')->user()?->can('edit.pengaturan'))
                                     <div class="mb-3">
                                         <label class="form-label"></label>
                                         <button type="submit" class="btn btn-primary">Perbarui</button>
                                     </div>
+                                    @endif
                             </div>
                         </div>
                         </form>

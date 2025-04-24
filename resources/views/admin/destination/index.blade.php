@@ -8,8 +8,12 @@
                 <div class="section-header justify-content-between">
                     <h1>Destinasi</h1>
                     <div class="ml-auto">
+                        @if (auth('admin')->user()?->can('tambah.destinasi'))
                         <a href="{{ route('admin_destination_create') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Destinasi</a>
+                        @endif
+                        @if (auth('admin')->user()?->can('sampah.destinasi'))
                         <a href="{{ route('admin_destination_trash') }}" class="btn btn-danger"><i class="fas fa-trash"></i> Sampah ( {{ $trashCount }} )</a>
+                        @endif
                     </div>
                 </div>
                 <div class="section-body">
@@ -24,8 +28,12 @@
                                                     <th>SL</th>
                                                     <th>Foto</th>
                                                     <th>Nama Destinasi</th>
+                                                    @if (auth('admin')->user()?->can('lihat.galeryFoto.destinasi') || auth('admin')->user()?->can('lihat.galeryVideo.destinasi'))
                                                     <th>Galeri</th>
+                                                    @endif
+                                                    @if (auth('admin')->user()?->can('edit.destination') || auth('admin')->user()?->can('hapus.destination'))
                                                     <th>Aksi</th>
+                                                    @endif
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -36,14 +44,26 @@
                                                         <img src="{{ asset('uploads/'.$destination->featured_photo) }}" alt="{{ $destination->name }}" class="w_100">
                                                     </td>
                                                     <td>{{ $destination->name }}</td>
+                                                    @if (auth('admin')->user()?->can('lihat.galeryFoto.destinasi') || auth('admin')->user()?->can('lihat.galeryVideo.destinasi'))
                                                     <td>
+                                                        @if (auth('admin')->user()?->can('lihat.galeryFoto.destinasi'))
                                                         <a href="{{ route('destination_photos', $destination->id) }}" class="btn btn-success btn-sm">Galeri Foto</a>
+                                                        @endif
+                                                        @if (auth('admin')->user()?->can('lihat.galeryVideo.destinasi'))
                                                         <a href="{{ route('destination_videos',$destination->id) }}" class="btn btn-success btn-sm">Galeri Video</a>
+                                                        @endif
                                                     </td>
+                                                    @endif
+                                                    @if (auth('admin')->user()?->can('edit.destination') || auth('admin')->user()?->can('hapus.destination'))
                                                     <td class="pt_10 pb_10">
+                                                        @if (auth('admin')->user()?->can('edit.destination'))
                                                         <a href="{{ route('admin_destination_edit', $destination->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                                        @endif
+                                                        @if (auth('admin')->user()?->can('hapus.destination'))
                                                         <a href="{{ route('admin_destination_delete', $destination->id) }}" class="btn btn-danger" onClick="return confirm('Destination will be move to trash. Are you sure?');"><i class="fas fa-trash"></i></a>
+                                                        @endif
                                                     </td>
+                                                    @endif
                                                 </tr>
                                                 @endforeach
                                             </tbody>

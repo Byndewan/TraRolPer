@@ -20,10 +20,12 @@
                                         <textarea name="map_code" class="form-control h_150" cols="30" rows="10">{{ $contact_item->map_code }}</textarea>
                                     </div>
 
+                                    @if (auth('admin')->user()?->can('edit.kontak'))
                                     <div class="mb-3">
                                         <label class="form-label"></label>
                                         <button type="submit" class="btn btn-primary">Perbarui</button>
                                     </div>
+                                    @endif
                             </div>
                         </div>
                         </form>

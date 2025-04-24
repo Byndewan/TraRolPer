@@ -26,10 +26,12 @@
                                         <textarea name="privacy" class="form-control editor" cols="30" rows="10">{{ $term_privacy_item->privacy }}</textarea>
                                     </div>
 
+                                    @if (auth('admin')->user()?->can(' edit.privacy.policy'))
                                     <div class="mb-3">
                                         <label class="form-label"></label>
                                         <button type="submit" class="btn btn-primary">Perbarui</button>
                                     </div>
+                                    @endif
                                 </form>
                             </div>
                         </div>

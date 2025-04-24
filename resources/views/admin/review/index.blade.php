@@ -8,7 +8,9 @@
                 <div class="section-header justify-content-between">
                     <h1>Ulasan</h1>
                     <div class="ml-auto">
+                        @if (auth('admin')->user()?->can('samapah.ulasan'))
                         <a href="{{ route('admin_review_trash') }}" class="btn btn-danger mr_10"><i class="fas fa-trash"></i> Sampah ( {{ $trashCount }} )</a>
+                        @endif
                     </div>
                 </div>
                 <div class="section-body">
@@ -25,7 +27,9 @@
                                                     <th>Pengguna</th>
                                                     <th>Rating</th>
                                                     <th>Komentar</th>
+                                                    @if (auth('admin')->user()?->can('hapus.ulasan'))
                                                     <th>Aksi</th>
+                                                    @endif
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -50,9 +54,11 @@
                                                         @endfor
                                                     </td>
                                                     <td>{{ $item->comment }}</td>
+                                                    @if (auth('admin')->user()?->can('hapus.ulasan'))
                                                     <td class="pt_10 pb_10">
                                                         <a href="{{ route('admin_review_delete',$item->id) }}" class="btn btn-danger" onClick="return confirm('Review will be move to trash. Are you sure?');"><i class="fas fa-trash"></i></a>
                                                     </td>
+                                                    @endif
                                                 </tr>
                                                 @endforeach
                                             </tbody>
