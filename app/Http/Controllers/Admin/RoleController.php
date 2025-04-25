@@ -68,9 +68,19 @@ class RoleController extends Controller
     }
 
     public function assignRoleForm() {
-        $admins = Admin::all();
-        $roles = Role::all();
-        return view('admin.roles.assign', compact('admins', 'roles'));
+        $roles = Role::where('name', '!=', 'super_admin')->get();
+
+        $admins = Admin::with('roles')->get()->filter(function ($admin) {
+            return $admin->roles->isEmpty() || !$admin->roles->contains('name', 'super_admin');
+        });
+
+        if ($admins->isEmpty()) {
+            return back()->with('error', 'Semua admin sudah memiliki role atau merupakan super_admin.');
+        }
+
+        $adminShows = Admin::all();
+
+        return view('admin.roles.assign', compact('admins', 'roles','adminShows'));
     }
 
     public function assignRoleSubmit(Request $request) {
@@ -79,14 +89,24 @@ class RoleController extends Controller
             'role' => 'required'
         ]);
 
-        $admin = Admin::findOrFail($request->admin_id);
-        $admin->syncRoles([$request->role]);
+        $admin = Admin::with('roles')->findOrFail($request->admin_id);
+
+        if ($admin->roles->isNotEmpty()) {
+            return back()->with('error', 'Admin ini sudah memiliki role. Hapus dulu role sebelumnya.');
+        }
+
+        $admin->assignRole($request->role);
 
         return redirect()->back()->with('success', 'Role berhasil diberikan ke user!');
     }
 
+
     public function removeRole(Admin $admin, $roleName)
     {
+        if ($roleName === 'super_admin') {
+            return back()->with('error', 'Role super admin tidak bisa dihapus.');
+        }
+
         $role = Role::where('name', $roleName)->firstOrFail();
         $admin->removeRole($role);
 

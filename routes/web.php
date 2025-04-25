@@ -13,10 +13,10 @@ use App\Http\Controllers\Admin\AdminDestinationController;
 use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminFeatureController;
 use App\Http\Controllers\Admin\AdminHomeItemController;
-use App\Http\Controllers\Admin\AdminNotifController;
 use App\Http\Controllers\Admin\AdminPackageController;
 use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminReviewController;
+use App\Http\Controllers\Admin\AdminsController;
 use App\Http\Controllers\Admin\AdminSettingController;
 use App\Http\Controllers\Admin\AdminSliderController;
 use App\Http\Controllers\Admin\AdminSponsorController;
@@ -30,11 +30,9 @@ use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminWelcomeItemController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
-use App\Http\Controllers\Comment\CommentController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\LogActivity\LogActivityController;
 use App\Http\Controllers\User\UserController;
-use App\Models\Booking;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Spatie\Permission\Middleware\PermissionMiddleware;
@@ -358,8 +356,19 @@ Route::middleware(['admin:admin'])
         Route::get('/comment-delete/{id}', [AdminCommentController::class, 'delete'])->name('comment.delete')->middleware('permission:hapus.commentBlog,admin');
 
         // LOG Section
-        Route::get('/log/activity/admin', [LogActivityController::class, 'indexAdmin'])->middleware('permission:lihat.logAktivitas.admin,admin');
-        Route::get('/log/activity/user', [LogActivityController::class, 'indexUser'])->middleware('permission:lihat.logAktivitas.user,admin');
+        Route::get('/log/activity/admin', [LogActivityController::class, 'indexAdmin'])->name('log.admin')->middleware('permission:lihat.logAktivitas.admin,admin');
+        Route::get('/log/activity/user', [LogActivityController::class, 'indexUser'])->name('log.user')->middleware('permission:lihat.logAktivitas.user,admin');
+
+
+
+        // Admins Section
+        Route::get('/admins', [AdminsController::class, 'admins'])->name('admin_admins')->middleware('permission:lihat.pengguna,admin');
+        Route::get('/admins/create', [AdminsController::class, 'admin_create'])->name('admin_admin_create')->middleware('permission:tambah.pengguna,admin');
+        Route::post('/admins/create/submit', [AdminsController::class, 'admin_create_submit'])->name('admin_admin_create_submit');
+        Route::get('/admins/edit/{id}', [AdminsController::class, 'admin_edit'])->name('admin_admin_edit')->middleware('permission:edit.pengguna,admin');
+        Route::post('/admins/edit/{id}', [AdminsController::class, 'admin_edit_submit'])->name('admin_admin_edit_submit');
+        Route::get('/admins/delete/{id}', [AdminsController::class, 'admin_delete'])->name('admin_admin_delete')->middleware('permission:hapus.pengguna,admin');
+
 
 
 
@@ -368,7 +377,7 @@ Route::middleware(['admin:admin'])
 
         Route::get('assign-role', [RoleController::class, 'assignRoleForm'])->name('assign.role.form');
         Route::post('assign-role', [RoleController::class, 'assignRoleSubmit'])->name('assign.role.submit');
-        Route::delete('/user/{user}/role/{role}', [RoleController::class, 'removeRole'])->name('user.removeRole');
+        Route::delete('/user/{admin}/role/{role}', [RoleController::class, 'removeRole'])->name('user.removeRole');
 
 
 

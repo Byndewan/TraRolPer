@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Apr 2025 pada 12.35
+-- Waktu pembuatan: 25 Apr 2025 pada 12.55
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -39,7 +39,7 @@ CREATE TABLE `about_items` (
 --
 
 INSERT INTO `about_items` (`id`, `featured_status`, `created_at`, `updated_at`) VALUES
-(1, 'Show', '2024-12-14 19:46:06', '2025-02-07 22:36:17');
+(1, 'Hide', '2024-12-14 19:46:06', '2025-04-25 02:56:14');
 
 -- --------------------------------------------------------
 
@@ -516,7 +516,53 @@ INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_type`, `ev
 (416, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 02:44:30', '2025-04-23 02:44:30'),
 (417, 'default', 'Admin admin2 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-23 02:44:37', '2025-04-23 02:44:37'),
 (418, 'default', 'Admin admin2 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-23 02:47:20', '2025-04-23 02:47:20'),
-(419, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 02:47:28', '2025-04-23 02:47:28');
+(419, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 02:47:28', '2025-04-23 02:47:28'),
+(420, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 19:20:03', '2025-04-23 19:20:03'),
+(421, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 22:05:19', '2025-04-23 22:05:19'),
+(422, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 22:42:24', '2025-04-23 22:42:24'),
+(423, 'default', 'Admin admin2 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-23 22:42:31', '2025-04-23 22:42:31'),
+(424, 'default', 'Admin admin2 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-23 22:42:50', '2025-04-23 22:42:50'),
+(425, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 22:42:56', '2025-04-23 22:42:56'),
+(426, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 22:43:20', '2025-04-23 22:43:20'),
+(427, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 22:43:25', '2025-04-23 22:43:25'),
+(428, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 22:43:29', '2025-04-23 22:43:29'),
+(429, 'default', 'Admin admin2 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-23 22:43:40', '2025-04-23 22:43:40'),
+(430, 'default', 'Admin admin2 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-23 22:45:01', '2025-04-23 22:45:01'),
+(431, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-23 22:45:07', '2025-04-23 22:45:07'),
+(432, 'default', 'Admin admin2 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-23 22:45:59', '2025-04-23 22:45:59'),
+(433, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-24 00:51:58', '2025-04-24 00:51:58'),
+(434, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-24 00:52:05', '2025-04-24 00:52:05'),
+(435, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-24 00:52:08', '2025-04-24 00:52:08'),
+(436, 'default', 'Admin admin2 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-24 00:52:15', '2025-04-24 00:52:15'),
+(437, 'default', 'Admin admin2 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-24 00:54:18', '2025-04-24 00:54:18'),
+(438, 'default', 'Admin admin2 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-24 00:58:48', '2025-04-24 00:58:48'),
+(439, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-24 00:58:56', '2025-04-24 00:58:56'),
+(440, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-25 00:54:52', '2025-04-25 00:54:52'),
+(441, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-25 01:50:40', '2025-04-25 01:50:40'),
+(442, 'default', 'Admin Admin-3 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 3, '[]', NULL, '2025-04-25 01:50:49', '2025-04-25 01:50:49'),
+(443, 'default', 'Admin Editor Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 4, '[]', NULL, '2025-04-25 01:51:06', '2025-04-25 01:51:06'),
+(444, 'default', 'Admin Editor Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 4, '[]', NULL, '2025-04-25 02:27:36', '2025-04-25 02:27:36'),
+(445, 'default', 'Admin admin-1 Melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-25 02:40:43', '2025-04-25 02:40:43'),
+(446, 'default', 'Admin admin-1 Mengedit Welcome Item.', 'App\\Models\\WelcomeItem', 'updated', 1, 'App\\Models\\Admin', 1, '{\"attributes\":{\"id\":1,\"heading\":\"Selamat datang di TripSummit\",\"description\":\"<p><span style=\\\"color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #f2f2f2;\\\">Di TripSummit, misi kami adalah mewujudkan impian perjalanan dengan menyediakan pengalaman yang personal dan berkesan. Kami memanfaatkan keahlian dan mitra tepercaya kami untuk memastikan setiap perjalanan berjalan lancar dan menyenangkan.<\\/span><\\/p>\\r\\n<p><span style=\\\"color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #f2f2f2;\\\">Kami percaya bahwa perjalanan dapat menumbuhkan pertumbuhan pribadi dan pemahaman budaya. Tujuan kami adalah membantu klien menjelajahi destinasi baru dan terhubung dengan beragam budaya. Kami mempromosikan perjalanan berkelanjutan untuk memberikan dampak positif bagi masyarakat dan melestarikan keindahan planet kita.<\\/span><\\/p>\",\"button_text\":\"Baca selengkapnya\",\"button_link\":\"#\",\"photo\":\"welcome_item_1732528236.jpg\",\"video\":\"Rh9Kz2EHKnw\",\"status\":\"Hide\",\"created_at\":\"2024-11-25 03:48:59\",\"updated_at\":\"2025-04-25 09:55:55\"},\"old\":{\"id\":1,\"heading\":\"Selamat datang di TripSummit\",\"description\":\"<p><span style=\\\"color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #f2f2f2;\\\">Di TripSummit, misi kami adalah mewujudkan impian perjalanan dengan menyediakan pengalaman yang personal dan berkesan. Kami memanfaatkan keahlian dan mitra tepercaya kami untuk memastikan setiap perjalanan berjalan lancar dan menyenangkan.<\\/span><\\/p>\\r\\n<p><span style=\\\"color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #f2f2f2;\\\">Kami percaya bahwa perjalanan dapat menumbuhkan pertumbuhan pribadi dan pemahaman budaya. Tujuan kami adalah membantu klien menjelajahi destinasi baru dan terhubung dengan beragam budaya. Kami mempromosikan perjalanan berkelanjutan untuk memberikan dampak positif bagi masyarakat dan melestarikan keindahan planet kita.<\\/span><\\/p>\",\"button_text\":\"Baca selengkapnya\",\"button_link\":\"#\",\"photo\":\"welcome_item_1732528236.jpg\",\"video\":\"Rh9Kz2EHKnw\",\"status\":\"Show\",\"created_at\":\"2024-11-25 03:48:59\",\"updated_at\":\"2025-02-17 13:44:35\"}}', NULL, '2025-04-25 02:55:55', '2025-04-25 02:55:55'),
+(447, 'default', 'Admin admin-1 Mengedit Home Item.', 'App\\Models\\HomeItem', 'updated', 1, 'App\\Models\\Admin', 1, '{\"attributes\":{\"id\":1,\"destination_heading\":\"Tujuan Populer\",\"destination_subheading\":\"Jelajahi tujuan perjalanan kami yang paling populer di seluruh dunia\",\"destination_status\":\"Show\",\"featured_status\":\"Show\",\"package_heading\":\"Paket Terbaru\",\"package_subheading\":\"Jelajahi paket perjalanan terbaru kami di seluruh dunia\",\"package_status\":\"Show\",\"testimonial_heading\":\"Testimoni Klien\",\"testimonial_subheading\":\"Lihat apa yang klien kami katakan tentang pengalaman mereka bersama kami\",\"testimonial_background\":\"testimonial_1734160718.jpg\",\"testimonial_status\":\"Show\",\"blog_heading\":\"Berita Terbaru\",\"blog_subheading\":\"Simak berita dan update terbaru dari postingan blog kami\",\"blog_status\":\"Show\",\"sponsor_heading\":\"Disponsori oleh\",\"sponsor_status\":\"Hide\",\"created_at\":\"2024-12-14 05:08:44\",\"updated_at\":\"2025-04-25 09:56:00\"},\"old\":{\"id\":1,\"destination_heading\":\"Tujuan Populer\",\"destination_subheading\":\"Jelajahi tujuan perjalanan kami yang paling populer di seluruh dunia\",\"destination_status\":\"Show\",\"featured_status\":\"Show\",\"package_heading\":\"Paket Terbaru\",\"package_subheading\":\"Jelajahi paket perjalanan terbaru kami di seluruh dunia\",\"package_status\":\"Show\",\"testimonial_heading\":\"Testimoni Klien\",\"testimonial_subheading\":\"Lihat apa yang klien kami katakan tentang pengalaman mereka bersama kami\",\"testimonial_background\":\"testimonial_1734160718.jpg\",\"testimonial_status\":\"Show\",\"blog_heading\":\"Berita Terbaru\",\"blog_subheading\":\"Simak berita dan update terbaru dari postingan blog kami\",\"blog_status\":\"Show\",\"sponsor_heading\":\"Disponsori oleh\",\"sponsor_status\":\"Show\",\"created_at\":\"2024-12-14 05:08:44\",\"updated_at\":\"2025-02-17 13:46:00\"}}', NULL, '2025-04-25 02:56:00', '2025-04-25 02:56:00'),
+(448, 'default', 'Admin admin-1 Mengedit Home Item.', 'App\\Models\\HomeItem', 'updated', 1, 'App\\Models\\Admin', 1, '{\"attributes\":{\"id\":1,\"destination_heading\":\"Tujuan Populer\",\"destination_subheading\":\"Jelajahi tujuan perjalanan kami yang paling populer di seluruh dunia\",\"destination_status\":\"Hide\",\"featured_status\":\"Hide\",\"package_heading\":\"Paket Terbaru\",\"package_subheading\":\"Jelajahi paket perjalanan terbaru kami di seluruh dunia\",\"package_status\":\"Show\",\"testimonial_heading\":\"Testimoni Klien\",\"testimonial_subheading\":\"Lihat apa yang klien kami katakan tentang pengalaman mereka bersama kami\",\"testimonial_background\":\"testimonial_1734160718.jpg\",\"testimonial_status\":\"Show\",\"blog_heading\":\"Berita Terbaru\",\"blog_subheading\":\"Simak berita dan update terbaru dari postingan blog kami\",\"blog_status\":\"Show\",\"sponsor_heading\":\"Disponsori oleh\",\"sponsor_status\":\"Hide\",\"created_at\":\"2024-12-14 05:08:44\",\"updated_at\":\"2025-04-25 09:56:10\"},\"old\":{\"id\":1,\"destination_heading\":\"Tujuan Populer\",\"destination_subheading\":\"Jelajahi tujuan perjalanan kami yang paling populer di seluruh dunia\",\"destination_status\":\"Show\",\"featured_status\":\"Show\",\"package_heading\":\"Paket Terbaru\",\"package_subheading\":\"Jelajahi paket perjalanan terbaru kami di seluruh dunia\",\"package_status\":\"Show\",\"testimonial_heading\":\"Testimoni Klien\",\"testimonial_subheading\":\"Lihat apa yang klien kami katakan tentang pengalaman mereka bersama kami\",\"testimonial_background\":\"testimonial_1734160718.jpg\",\"testimonial_status\":\"Show\",\"blog_heading\":\"Berita Terbaru\",\"blog_subheading\":\"Simak berita dan update terbaru dari postingan blog kami\",\"blog_status\":\"Show\",\"sponsor_heading\":\"Disponsori oleh\",\"sponsor_status\":\"Hide\",\"created_at\":\"2024-12-14 05:08:44\",\"updated_at\":\"2025-04-25 09:56:00\"}}', NULL, '2025-04-25 02:56:10', '2025-04-25 02:56:10'),
+(449, 'default', 'Admin admin-1 Mengedit About Item.', 'App\\Models\\AboutItem', 'updated', 1, 'App\\Models\\Admin', 1, '{\"attributes\":{\"id\":1,\"featured_status\":\"Hide\",\"created_at\":\"2024-12-15 02:46:06\",\"updated_at\":\"2025-04-25 09:56:14\"},\"old\":{\"id\":1,\"featured_status\":\"Show\",\"created_at\":\"2024-12-15 02:46:06\",\"updated_at\":\"2025-02-08 05:36:17\"}}', NULL, '2025-04-25 02:56:14', '2025-04-25 02:56:14'),
+(450, 'default', 'Admin admin-1 Mengedit Counter Item.', 'App\\Models\\CounterItem', 'updated', 1, 'App\\Models\\Admin', 1, '{\"attributes\":{\"id\":1,\"item1_number\":\"40\",\"item1_text\":\"Destinasi\",\"item2_number\":\"1200\",\"item2_text\":\"Klien\",\"item3_number\":\"130\",\"item3_text\":\"Paket\",\"item4_number\":\"60\",\"item4_text\":\"Timbal Balik\",\"status\":\"Hide\",\"created_at\":\"2024-11-25 13:23:14\",\"updated_at\":\"2025-04-25 09:56:16\"},\"old\":{\"id\":1,\"item1_number\":\"40\",\"item1_text\":\"Destinasi\",\"item2_number\":\"1200\",\"item2_text\":\"Klien\",\"item3_number\":\"130\",\"item3_text\":\"Paket\",\"item4_number\":\"60\",\"item4_text\":\"Timbal Balik\",\"status\":\"Show\",\"created_at\":\"2024-11-25 13:23:14\",\"updated_at\":\"2025-02-17 14:26:08\"}}', NULL, '2025-04-25 02:56:16', '2025-04-25 02:56:16'),
+(451, 'default', 'Admin admin-1 Mengedit Home Item.', 'App\\Models\\HomeItem', 'updated', 1, 'App\\Models\\Admin', 1, '{\"attributes\":{\"id\":1,\"destination_heading\":\"Tujuan Populer\",\"destination_subheading\":\"Jelajahi tujuan perjalanan kami yang paling populer di seluruh dunia\",\"destination_status\":\"Hide\",\"featured_status\":\"Hide\",\"package_heading\":\"Paket Terbaru\",\"package_subheading\":\"Jelajahi paket perjalanan terbaru kami di seluruh dunia\",\"package_status\":\"Show\",\"testimonial_heading\":\"Testimoni Klien\",\"testimonial_subheading\":\"Lihat apa yang klien kami katakan tentang pengalaman mereka bersama kami\",\"testimonial_background\":\"testimonial_1734160718.jpg\",\"testimonial_status\":\"Show\",\"blog_heading\":\"Berita Terbaru\",\"blog_subheading\":\"Simak berita dan update terbaru dari postingan blog kami\",\"blog_status\":\"Show\",\"sponsor_heading\":\"Disponsori oleh\",\"sponsor_status\":\"Hide\",\"created_at\":\"2024-12-14 05:08:44\",\"updated_at\":\"2025-04-25 09:56:10\"},\"old\":{\"id\":1,\"destination_heading\":\"Tujuan Populer\",\"destination_subheading\":\"Jelajahi tujuan perjalanan kami yang paling populer di seluruh dunia\",\"destination_status\":\"Hide\",\"featured_status\":\"Hide\",\"package_heading\":\"Paket Terbaru\",\"package_subheading\":\"Jelajahi paket perjalanan terbaru kami di seluruh dunia\",\"package_status\":\"Show\",\"testimonial_heading\":\"Testimoni Klien\",\"testimonial_subheading\":\"Lihat apa yang klien kami katakan tentang pengalaman mereka bersama kami\",\"testimonial_background\":\"testimonial_1734160718.jpg\",\"testimonial_status\":\"Show\",\"blog_heading\":\"Berita Terbaru\",\"blog_subheading\":\"Simak berita dan update terbaru dari postingan blog kami\",\"blog_status\":\"Show\",\"sponsor_heading\":\"Disponsori oleh\",\"sponsor_status\":\"Hide\",\"created_at\":\"2024-12-14 05:08:44\",\"updated_at\":\"2025-04-25 09:56:10\"}}', NULL, '2025-04-25 02:56:49', '2025-04-25 02:56:49'),
+(452, 'default', 'Admin admin-1 Mengedit Home Item.', 'App\\Models\\HomeItem', 'updated', 1, 'App\\Models\\Admin', 1, '{\"attributes\":{\"id\":1,\"destination_heading\":\"Tujuan Populer\",\"destination_subheading\":\"Jelajahi tujuan perjalanan kami yang paling populer di seluruh dunia\",\"destination_status\":\"Hide\",\"featured_status\":\"Hide\",\"package_heading\":\"Paket Terbaru\",\"package_subheading\":\"Jelajahi paket perjalanan terbaru kami di seluruh dunia\",\"package_status\":\"Hide\",\"testimonial_heading\":\"Testimoni Klien\",\"testimonial_subheading\":\"Lihat apa yang klien kami katakan tentang pengalaman mereka bersama kami\",\"testimonial_background\":\"testimonial_1734160718.jpg\",\"testimonial_status\":\"Hide\",\"blog_heading\":\"Berita Terbaru\",\"blog_subheading\":\"Simak berita dan update terbaru dari postingan blog kami\",\"blog_status\":\"Hide\",\"sponsor_heading\":\"Disponsori oleh\",\"sponsor_status\":\"Hide\",\"created_at\":\"2024-12-14 05:08:44\",\"updated_at\":\"2025-04-25 09:57:51\"},\"old\":{\"id\":1,\"destination_heading\":\"Tujuan Populer\",\"destination_subheading\":\"Jelajahi tujuan perjalanan kami yang paling populer di seluruh dunia\",\"destination_status\":\"Hide\",\"featured_status\":\"Hide\",\"package_heading\":\"Paket Terbaru\",\"package_subheading\":\"Jelajahi paket perjalanan terbaru kami di seluruh dunia\",\"package_status\":\"Show\",\"testimonial_heading\":\"Testimoni Klien\",\"testimonial_subheading\":\"Lihat apa yang klien kami katakan tentang pengalaman mereka bersama kami\",\"testimonial_background\":\"testimonial_1734160718.jpg\",\"testimonial_status\":\"Show\",\"blog_heading\":\"Berita Terbaru\",\"blog_subheading\":\"Simak berita dan update terbaru dari postingan blog kami\",\"blog_status\":\"Show\",\"sponsor_heading\":\"Disponsori oleh\",\"sponsor_status\":\"Hide\",\"created_at\":\"2024-12-14 05:08:44\",\"updated_at\":\"2025-04-25 09:56:10\"}}', NULL, '2025-04-25 02:57:51', '2025-04-25 02:57:51'),
+(453, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-25 03:00:30', '2025-04-25 03:00:30'),
+(454, 'default', 'Admin admin-1 melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-25 03:00:44', '2025-04-25 03:00:44'),
+(455, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-25 03:00:50', '2025-04-25 03:00:50'),
+(456, 'default', 'Admin admin-1 melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-25 03:01:36', '2025-04-25 03:01:36'),
+(457, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-25 03:01:43', '2025-04-25 03:01:43'),
+(458, 'default', 'Admin admin-2 melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-25 03:01:51', '2025-04-25 03:01:51'),
+(459, 'default', 'Admin admin-2 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 2, '[]', NULL, '2025-04-25 03:01:55', '2025-04-25 03:01:55'),
+(460, 'default', 'Admin admin-1 melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-25 03:49:50', '2025-04-25 03:49:50'),
+(461, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-25 03:50:23', '2025-04-25 03:50:23'),
+(462, 'default', 'Admin admin-1 melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-25 03:50:29', '2025-04-25 03:50:29'),
+(463, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-25 03:51:19', '2025-04-25 03:51:19'),
+(464, 'default', 'Admin admin-1 melakukan login', NULL, 'login', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-25 03:51:26', '2025-04-25 03:51:26'),
+(465, 'default', 'Admin admin-1 Melakukan logout', NULL, 'logout', NULL, 'App\\Models\\Admin', 1, '[]', NULL, '2025-04-25 03:51:30', '2025-04-25 03:51:30');
 
 -- --------------------------------------------------------
 
@@ -540,8 +586,10 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `photo`, `password`, `token`, `created_at`, `updated_at`) VALUES
-(1, 'admin-1', 'admin@gmail.com', 'admin_1735390234.jpg', '$2y$12$baQaUb90HhTUzFvoUMJNLuu.ZIw/tWBUKFJ0o2p5dStR89DTtZLCK', '', '2024-11-20 03:13:16', '2025-03-11 01:46:32'),
-(2, 'admin2', 'admin2@gmail.com', 'admin_1737442051.jpg', '$2y$12$baQaUb90HhTUzFvoUMJNLuu.ZIw/tWBUKFJ0o2p5dStR89DTtZLCK', NULL, NULL, '2025-01-20 23:47:31');
+(1, 'admin-1', 'admin@admin.com', 'admin_1735390234.jpg', '$2y$12$JcOMefOPmLguH3oZ7jk.GODxKz4vX6FB.DDZJfKdyPA4h2WPfVahe', '', '2024-11-20 03:13:16', '2025-04-25 01:45:59'),
+(2, 'admin-2', 'admin2@admin.com', 'admin_1745570741.jpg', '$2y$12$JcOMefOPmLguH3oZ7jk.GODxKz4vX6FB.DDZJfKdyPA4h2WPfVahe', NULL, NULL, '2025-04-25 01:45:52'),
+(3, 'Admin-3', 'admin3@admin.com', 'admin_1745570678.jpg', '$2y$12$9W0LJQiQgMOeFc2ITPf9HOODQyzryboAg.2AL8QA4aHLhOGoEsb..', NULL, '2025-04-25 01:44:38', '2025-04-25 01:44:38'),
+(4, 'Editor', 'editor@editor.com', 'admin_1745570797.jpg', '$2y$12$JcOMefOPmLguH3oZ7jk.GODxKz4vX6FB.DDZJfKdyPA4h2WPfVahe', NULL, '2025-04-25 01:46:37', '2025-04-25 01:46:37');
 
 -- --------------------------------------------------------
 
@@ -679,7 +727,7 @@ CREATE TABLE `cache` (
 --
 
 INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
-('spatie.permission.cache', 'a:3:{s:5:\"alias\";a:4:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";}s:11:\"permissions\";a:126:{i:0;a:4:{s:1:\"a\";i:7;s:1:\"b\";s:15:\"lihat.dashboard\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:10;}}i:1;a:4:{s:1:\"a\";i:8;s:1:\"b\";s:13:\"lihat.laporan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:10;}}i:2;a:4:{s:1:\"a\";i:9;s:1:\"b\";s:17:\"simpanpdf.laporan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:3;a:4:{s:1:\"a\";i:10;s:1:\"b\";s:19:\"simpanexcel.laporan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:4;a:4:{s:1:\"a\";i:11;s:1:\"b\";s:12:\"lihat.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:5;a:4:{s:1:\"a\";i:12;s:1:\"b\";s:13:\"tambah.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:6;a:4:{s:1:\"a\";i:13;s:1:\"b\";s:11:\"edit.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:7;a:4:{s:1:\"a\";i:14;s:1:\"b\";s:12:\"hapus.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:8;a:4:{s:1:\"a\";i:15;s:1:\"b\";s:13:\"sampah.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:9;a:4:{s:1:\"a\";i:16;s:1:\"b\";s:16:\"lihat.pengaturan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:10;a:4:{s:1:\"a\";i:17;s:1:\"b\";s:15:\"edit.pengaturan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:11;a:4:{s:1:\"a\";i:19;s:1:\"b\";s:22:\"tambah.fasilitas.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:12;a:4:{s:1:\"a\";i:21;s:1:\"b\";s:21:\"hapus.fasilitas.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:13;a:4:{s:1:\"a\";i:22;s:1:\"b\";s:22:\"sampah.fasilitas.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:14;a:4:{s:1:\"a\";i:23;s:1:\"b\";s:12:\"lihat.ulasan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:15;a:4:{s:1:\"a\";i:24;s:1:\"b\";s:12:\"hapus.ulasan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:16;a:4:{s:1:\"a\";i:25;s:1:\"b\";s:13:\"sampah.ulasan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:17;a:4:{s:1:\"a\";i:26;s:1:\"b\";s:11:\"lihat.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:18;a:4:{s:1:\"a\";i:27;s:1:\"b\";s:12:\"tambah.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:19;a:4:{s:1:\"a\";i:28;s:1:\"b\";s:10:\"edit.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:20;a:4:{s:1:\"a\";i:29;s:1:\"b\";s:11:\"hapus.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:21;a:4:{s:1:\"a\";i:30;s:1:\"b\";s:12:\"sampah.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:22;a:4:{s:1:\"a\";i:31;s:1:\"b\";s:15:\"lihat.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:23;a:4:{s:1:\"a\";i:32;s:1:\"b\";s:16:\"tambah.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:24;a:4:{s:1:\"a\";i:33;s:1:\"b\";s:14:\"edit.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:25;a:4:{s:1:\"a\";i:34;s:1:\"b\";s:15:\"hapus.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:26;a:4:{s:1:\"a\";i:35;s:1:\"b\";s:16:\"sampah.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:27;a:4:{s:1:\"a\";i:36;s:1:\"b\";s:26:\"lihat.galeryFoto.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:28;a:4:{s:1:\"a\";i:37;s:1:\"b\";s:27:\"tambah.galeryFoto.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:29;a:4:{s:1:\"a\";i:38;s:1:\"b\";s:26:\"hapus.galeryFoto.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:30;a:4:{s:1:\"a\";i:39;s:1:\"b\";s:27:\"sampah.galeryFoto.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:31;a:4:{s:1:\"a\";i:40;s:1:\"b\";s:27:\"lihat.galeryVideo.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:32;a:4:{s:1:\"a\";i:41;s:1:\"b\";s:28:\"tambah.galeryVideo.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:33;a:4:{s:1:\"a\";i:42;s:1:\"b\";s:27:\"hapus.galeryVideo.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:34;a:4:{s:1:\"a\";i:43;s:1:\"b\";s:28:\"sampah.galeryVideo.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:35;a:4:{s:1:\"a\";i:44;s:1:\"b\";s:18:\"lihat.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:36;a:4:{s:1:\"a\";i:45;s:1:\"b\";s:19:\"tambah.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:37;a:4:{s:1:\"a\";i:46;s:1:\"b\";s:17:\"edit.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:38;a:4:{s:1:\"a\";i:47;s:1:\"b\";s:18:\"hapus.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:39;a:4:{s:1:\"a\";i:48;s:1:\"b\";s:19:\"sampah.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:40;a:4:{s:1:\"a\";i:49;s:1:\"b\";s:14:\"lihat.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:41;a:4:{s:1:\"a\";i:50;s:1:\"b\";s:15:\"tambah.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:42;a:4:{s:1:\"a\";i:51;s:1:\"b\";s:13:\"edit.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:43;a:4:{s:1:\"a\";i:52;s:1:\"b\";s:14:\"hapus.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:44;a:4:{s:1:\"a\";i:53;s:1:\"b\";s:15:\"sampah.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:45;a:4:{s:1:\"a\";i:54;s:1:\"b\";s:17:\"lihat.commentBlog\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:46;a:4:{s:1:\"a\";i:55;s:1:\"b\";s:17:\"hapus.commentBlog\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:47;a:4:{s:1:\"a\";i:56;s:1:\"b\";s:11:\"lihat.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:48;a:4:{s:1:\"a\";i:57;s:1:\"b\";s:12:\"tambah.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:49;a:4:{s:1:\"a\";i:58;s:1:\"b\";s:10:\"edit.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:50;a:4:{s:1:\"a\";i:59;s:1:\"b\";s:11:\"hapus.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:51;a:4:{s:1:\"a\";i:60;s:1:\"b\";s:21:\"lihat.fasilitas.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:52;a:4:{s:1:\"a\";i:61;s:1:\"b\";s:22:\"lihat.galery.fasilitas\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:53;a:4:{s:1:\"a\";i:62;s:1:\"b\";s:23:\"tambah.galery.fasilitas\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:54;a:4:{s:1:\"a\";i:63;s:1:\"b\";s:22:\"hapus.galery.fasilitas\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:55;a:4:{s:1:\"a\";i:64;s:1:\"b\";s:14:\"tambah.rencana\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:56;a:4:{s:1:\"a\";i:65;s:1:\"b\";s:13:\"hapus.rencana\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:57;a:4:{s:1:\"a\";i:66;s:1:\"b\";s:14:\"sampah.rencana\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:58;a:4:{s:1:\"a\";i:67;s:1:\"b\";s:13:\"lihat.rencana\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:59;a:4:{s:1:\"a\";i:68;s:1:\"b\";s:22:\"lihat.pertanyaan.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:60;a:4:{s:1:\"a\";i:69;s:1:\"b\";s:23:\"tambah.pertanyaan.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:61;a:4:{s:1:\"a\";i:70;s:1:\"b\";s:22:\"hapus.pertanyaan.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:62;a:4:{s:1:\"a\";i:71;s:1:\"b\";s:23:\"sampah.pertanyaan.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:63;a:4:{s:1:\"a\";i:72;s:1:\"b\";s:22:\"lihat.galeryFoto.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:64;a:4:{s:1:\"a\";i:73;s:1:\"b\";s:23:\"tambah.galeryFoto.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:65;a:4:{s:1:\"a\";i:74;s:1:\"b\";s:22:\"hapus.galeryFoto.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:66;a:4:{s:1:\"a\";i:75;s:1:\"b\";s:23:\"sampah.galeryFoto.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:67;a:4:{s:1:\"a\";i:76;s:1:\"b\";s:23:\"lihat.galeryVideo.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:68;a:4:{s:1:\"a\";i:77;s:1:\"b\";s:24:\"tambah.galeryVideo.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:69;a:4:{s:1:\"a\";i:78;s:1:\"b\";s:23:\"hapus.galeryVideo.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:70;a:4:{s:1:\"a\";i:79;s:1:\"b\";s:24:\"sampah.galeryVideo.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:71;a:4:{s:1:\"a\";i:80;s:1:\"b\";s:9:\"lihat.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:72;a:4:{s:1:\"a\";i:81;s:1:\"b\";s:10:\"tambah.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:73;a:4:{s:1:\"a\";i:82;s:1:\"b\";s:8:\"edit.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:74;a:4:{s:1:\"a\";i:83;s:1:\"b\";s:9:\"hapus.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:75;a:4:{s:1:\"a\";i:84;s:1:\"b\";s:10:\"sampah.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:76;a:4:{s:1:\"a\";i:85;s:1:\"b\";s:19:\"lihat.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:77;a:4:{s:1:\"a\";i:86;s:1:\"b\";s:19:\"hapus.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:78;a:4:{s:1:\"a\";i:87;s:1:\"b\";s:20:\"sampah.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:79;a:4:{s:1:\"a\";i:88;s:1:\"b\";s:22:\"whatsapp.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:80;a:4:{s:1:\"a\";i:89;s:1:\"b\";s:24:\"infofaktur.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:81;a:4:{s:1:\"a\";i:90;s:1:\"b\";s:14:\"lihat.pengikut\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:82;a:4:{s:1:\"a\";i:91;s:1:\"b\";s:19:\"kirimEmail.pengikut\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:83;a:4:{s:1:\"a\";i:92;s:1:\"b\";s:14:\"hapus.pengikut\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:84;a:4:{s:1:\"a\";i:93;s:1:\"b\";s:15:\"sampah.pengikut\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:85;a:4:{s:1:\"a\";i:94;s:1:\"b\";s:14:\"lihat.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:86;a:4:{s:1:\"a\";i:95;s:1:\"b\";s:15:\"tambah.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:87;a:4:{s:1:\"a\";i:96;s:1:\"b\";s:13:\"edit.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:88;a:4:{s:1:\"a\";i:97;s:1:\"b\";s:14:\"hapus.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:89;a:4:{s:1:\"a\";i:98;s:1:\"b\";s:15:\"sampah.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:90;a:4:{s:1:\"a\";i:99;s:1:\"b\";s:22:\"lihat.message.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:91;a:4:{s:1:\"a\";i:100;s:1:\"b\";s:22:\"buka.message.penggguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:92;a:4:{s:1:\"a\";i:101;s:1:\"b\";s:15:\"lihat.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:93;a:4:{s:1:\"a\";i:102;s:1:\"b\";s:16:\"tambah.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:94;a:4:{s:1:\"a\";i:103;s:1:\"b\";s:14:\"edit.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:95;a:4:{s:1:\"a\";i:104;s:1:\"b\";s:15:\"hapus.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:96;a:4:{s:1:\"a\";i:105;s:1:\"b\";s:16:\"sampah.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:97;a:4:{s:1:\"a\";i:106;s:1:\"b\";s:16:\"lihat.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:98;a:4:{s:1:\"a\";i:107;s:1:\"b\";s:17:\"tambah.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:99;a:4:{s:1:\"a\";i:108;s:1:\"b\";s:15:\"edit.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:100;a:4:{s:1:\"a\";i:109;s:1:\"b\";s:16:\"hapus.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:101;a:4:{s:1:\"a\";i:110;s:1:\"b\";s:17:\"sampah.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:102;a:4:{s:1:\"a\";i:111;s:1:\"b\";s:13:\"lihat.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:103;a:4:{s:1:\"a\";i:112;s:1:\"b\";s:14:\"tambah.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:104;a:4:{s:1:\"a\";i:113;s:1:\"b\";s:12:\"edit.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:105;a:4:{s:1:\"a\";i:114;s:1:\"b\";s:13:\"hapus.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:106;a:4:{s:1:\"a\";i:115;s:1:\"b\";s:14:\"sampah.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:107;a:4:{s:1:\"a\";i:116;s:1:\"b\";s:13:\"lihat.sponsor\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:108;a:4:{s:1:\"a\";i:117;s:1:\"b\";s:14:\"tambah.sponsor\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:109;a:4:{s:1:\"a\";i:118;s:1:\"b\";s:13:\"hapus.sponsor\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:110;a:4:{s:1:\"a\";i:119;s:1:\"b\";s:14:\"sampah.sponsor\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:111;a:4:{s:1:\"a\";i:120;s:1:\"b\";s:9:\"Perizinan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:112;a:4:{s:1:\"a\";i:121;s:1:\"b\";s:13:\"lihat.beranda\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:113;a:4:{s:1:\"a\";i:122;s:1:\"b\";s:12:\"edit.beranda\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:114;a:4:{s:1:\"a\";i:123;s:1:\"b\";s:13:\"lihat.tentang\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:115;a:4:{s:1:\"a\";i:124;s:1:\"b\";s:12:\"edit.tentang\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:116;a:4:{s:1:\"a\";i:125;s:1:\"b\";s:12:\"lihat.kontak\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:117;a:4:{s:1:\"a\";i:126;s:1:\"b\";s:11:\"edit.kontak\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:118;a:4:{s:1:\"a\";i:127;s:1:\"b\";s:13:\"lihat.welcome\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:119;a:4:{s:1:\"a\";i:128;s:1:\"b\";s:12:\"edit.welcome\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:120;a:4:{s:1:\"a\";i:129;s:1:\"b\";s:13:\"lihat.counter\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:121;a:4:{s:1:\"a\";i:130;s:1:\"b\";s:12:\"edit.counter\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:122;a:4:{s:1:\"a\";i:131;s:1:\"b\";s:20:\"lihat.privacy.policy\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:123;a:4:{s:1:\"a\";i:132;s:1:\"b\";s:19:\"edit.privacy.policy\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:124;a:4:{s:1:\"a\";i:133;s:1:\"b\";s:24:\"lihat.logAktivitas.admin\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:125;a:4:{s:1:\"a\";i:134;s:1:\"b\";s:23:\"lihat.logAktivitas.user\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}}s:5:\"roles\";a:2:{i:0;a:3:{s:1:\"a\";i:9;s:1:\"b\";s:11:\"super_admin\";s:1:\"c\";s:5:\"admin\";}i:1;a:3:{s:1:\"a\";i:10;s:1:\"b\";s:5:\"admin\";s:1:\"c\";s:5:\"admin\";}}}', 1745490869);
+('spatie.permission.cache', 'a:3:{s:5:\"alias\";a:4:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";}s:11:\"permissions\";a:127:{i:0;a:4:{s:1:\"a\";i:7;s:1:\"b\";s:15:\"lihat.dashboard\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:10;}}i:1;a:4:{s:1:\"a\";i:8;s:1:\"b\";s:13:\"lihat.laporan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:2;a:4:{s:1:\"a\";i:9;s:1:\"b\";s:17:\"simpanpdf.laporan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:3;a:4:{s:1:\"a\";i:10;s:1:\"b\";s:19:\"simpanexcel.laporan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:4;a:4:{s:1:\"a\";i:11;s:1:\"b\";s:12:\"lihat.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:5;a:4:{s:1:\"a\";i:12;s:1:\"b\";s:13:\"tambah.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:6;a:4:{s:1:\"a\";i:13;s:1:\"b\";s:11:\"edit.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:7;a:4:{s:1:\"a\";i:14;s:1:\"b\";s:12:\"hapus.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:8;a:4:{s:1:\"a\";i:15;s:1:\"b\";s:13:\"sampah.slider\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:9;a:4:{s:1:\"a\";i:16;s:1:\"b\";s:16:\"lihat.pengaturan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:10;a:4:{s:1:\"a\";i:17;s:1:\"b\";s:15:\"edit.pengaturan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:11;a:4:{s:1:\"a\";i:19;s:1:\"b\";s:22:\"tambah.fasilitas.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:12;a:4:{s:1:\"a\";i:21;s:1:\"b\";s:21:\"hapus.fasilitas.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:13;a:4:{s:1:\"a\";i:22;s:1:\"b\";s:22:\"sampah.fasilitas.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:14;a:4:{s:1:\"a\";i:23;s:1:\"b\";s:12:\"lihat.ulasan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:15;a:4:{s:1:\"a\";i:24;s:1:\"b\";s:12:\"hapus.ulasan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:16;a:4:{s:1:\"a\";i:25;s:1:\"b\";s:13:\"sampah.ulasan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:17;a:4:{s:1:\"a\";i:26;s:1:\"b\";s:11:\"lihat.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:18;a:4:{s:1:\"a\";i:27;s:1:\"b\";s:12:\"tambah.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:19;a:4:{s:1:\"a\";i:28;s:1:\"b\";s:10:\"edit.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:20;a:4:{s:1:\"a\";i:29;s:1:\"b\";s:11:\"hapus.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:21;a:4:{s:1:\"a\";i:30;s:1:\"b\";s:12:\"sampah.fitur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:22;a:4:{s:1:\"a\";i:31;s:1:\"b\";s:15:\"lihat.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:23;a:4:{s:1:\"a\";i:32;s:1:\"b\";s:16:\"tambah.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:24;a:4:{s:1:\"a\";i:33;s:1:\"b\";s:14:\"edit.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:25;a:4:{s:1:\"a\";i:34;s:1:\"b\";s:15:\"hapus.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:26;a:4:{s:1:\"a\";i:35;s:1:\"b\";s:16:\"sampah.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:27;a:4:{s:1:\"a\";i:36;s:1:\"b\";s:26:\"lihat.galeryFoto.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:28;a:4:{s:1:\"a\";i:37;s:1:\"b\";s:27:\"tambah.galeryFoto.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:29;a:4:{s:1:\"a\";i:38;s:1:\"b\";s:26:\"hapus.galeryFoto.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:30;a:4:{s:1:\"a\";i:39;s:1:\"b\";s:27:\"sampah.galeryFoto.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:31;a:4:{s:1:\"a\";i:40;s:1:\"b\";s:27:\"lihat.galeryVideo.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:32;a:4:{s:1:\"a\";i:41;s:1:\"b\";s:28:\"tambah.galeryVideo.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:33;a:4:{s:1:\"a\";i:42;s:1:\"b\";s:27:\"hapus.galeryVideo.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:34;a:4:{s:1:\"a\";i:43;s:1:\"b\";s:28:\"sampah.galeryVideo.destinasi\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:35;a:4:{s:1:\"a\";i:44;s:1:\"b\";s:18:\"lihat.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:36;a:4:{s:1:\"a\";i:45;s:1:\"b\";s:19:\"tambah.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:37;a:4:{s:1:\"a\";i:46;s:1:\"b\";s:17:\"edit.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:38;a:4:{s:1:\"a\";i:47;s:1:\"b\";s:18:\"hapus.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:39;a:4:{s:1:\"a\";i:48;s:1:\"b\";s:19:\"sampah.blogKategori\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:40;a:4:{s:1:\"a\";i:49;s:1:\"b\";s:14:\"lihat.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:41;a:4:{s:1:\"a\";i:50;s:1:\"b\";s:15:\"tambah.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:42;a:4:{s:1:\"a\";i:51;s:1:\"b\";s:13:\"edit.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:43;a:4:{s:1:\"a\";i:52;s:1:\"b\";s:14:\"hapus.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:44;a:4:{s:1:\"a\";i:53;s:1:\"b\";s:15:\"sampah.blogPost\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:45;a:4:{s:1:\"a\";i:54;s:1:\"b\";s:17:\"lihat.commentBlog\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:46;a:4:{s:1:\"a\";i:55;s:1:\"b\";s:17:\"hapus.commentBlog\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:47;a:4:{s:1:\"a\";i:56;s:1:\"b\";s:11:\"lihat.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:48;a:4:{s:1:\"a\";i:57;s:1:\"b\";s:12:\"tambah.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:49;a:4:{s:1:\"a\";i:58;s:1:\"b\";s:10:\"edit.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:50;a:4:{s:1:\"a\";i:59;s:1:\"b\";s:11:\"hapus.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:51;a:4:{s:1:\"a\";i:60;s:1:\"b\";s:21:\"lihat.fasilitas.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:52;a:4:{s:1:\"a\";i:61;s:1:\"b\";s:22:\"lihat.galery.fasilitas\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:53;a:4:{s:1:\"a\";i:62;s:1:\"b\";s:23:\"tambah.galery.fasilitas\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:54;a:4:{s:1:\"a\";i:63;s:1:\"b\";s:22:\"hapus.galery.fasilitas\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:55;a:4:{s:1:\"a\";i:64;s:1:\"b\";s:14:\"tambah.rencana\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:56;a:4:{s:1:\"a\";i:65;s:1:\"b\";s:13:\"hapus.rencana\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:57;a:4:{s:1:\"a\";i:66;s:1:\"b\";s:14:\"sampah.rencana\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:58;a:4:{s:1:\"a\";i:67;s:1:\"b\";s:13:\"lihat.rencana\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:59;a:4:{s:1:\"a\";i:68;s:1:\"b\";s:22:\"lihat.pertanyaan.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:60;a:4:{s:1:\"a\";i:69;s:1:\"b\";s:23:\"tambah.pertanyaan.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:61;a:4:{s:1:\"a\";i:70;s:1:\"b\";s:22:\"hapus.pertanyaan.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:62;a:4:{s:1:\"a\";i:71;s:1:\"b\";s:23:\"sampah.pertanyaan.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:63;a:4:{s:1:\"a\";i:72;s:1:\"b\";s:22:\"lihat.galeryFoto.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:64;a:4:{s:1:\"a\";i:73;s:1:\"b\";s:23:\"tambah.galeryFoto.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:65;a:4:{s:1:\"a\";i:74;s:1:\"b\";s:22:\"hapus.galeryFoto.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:66;a:4:{s:1:\"a\";i:75;s:1:\"b\";s:23:\"sampah.galeryFoto.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:67;a:4:{s:1:\"a\";i:76;s:1:\"b\";s:23:\"lihat.galeryVideo.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:68;a:4:{s:1:\"a\";i:77;s:1:\"b\";s:24:\"tambah.galeryVideo.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:69;a:4:{s:1:\"a\";i:78;s:1:\"b\";s:23:\"hapus.galeryVideo.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:70;a:4:{s:1:\"a\";i:79;s:1:\"b\";s:24:\"sampah.galeryVideo.paket\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:71;a:4:{s:1:\"a\";i:80;s:1:\"b\";s:9:\"lihat.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:72;a:4:{s:1:\"a\";i:81;s:1:\"b\";s:10:\"tambah.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:73;a:4:{s:1:\"a\";i:82;s:1:\"b\";s:8:\"edit.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:74;a:4:{s:1:\"a\";i:83;s:1:\"b\";s:9:\"hapus.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:75;a:4:{s:1:\"a\";i:84;s:1:\"b\";s:10:\"sampah.tur\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:76;a:4:{s:1:\"a\";i:85;s:1:\"b\";s:19:\"lihat.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:77;a:4:{s:1:\"a\";i:86;s:1:\"b\";s:19:\"hapus.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:78;a:4:{s:1:\"a\";i:87;s:1:\"b\";s:20:\"sampah.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:79;a:4:{s:1:\"a\";i:88;s:1:\"b\";s:22:\"whatsapp.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:80;a:4:{s:1:\"a\";i:89;s:1:\"b\";s:24:\"infofaktur.infoPemesanan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:81;a:4:{s:1:\"a\";i:90;s:1:\"b\";s:14:\"lihat.pengikut\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:82;a:4:{s:1:\"a\";i:91;s:1:\"b\";s:19:\"kirimEmail.pengikut\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:83;a:4:{s:1:\"a\";i:92;s:1:\"b\";s:14:\"hapus.pengikut\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:84;a:4:{s:1:\"a\";i:93;s:1:\"b\";s:15:\"sampah.pengikut\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:85;a:4:{s:1:\"a\";i:94;s:1:\"b\";s:14:\"lihat.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:86;a:4:{s:1:\"a\";i:95;s:1:\"b\";s:15:\"tambah.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:87;a:4:{s:1:\"a\";i:96;s:1:\"b\";s:13:\"edit.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:88;a:4:{s:1:\"a\";i:97;s:1:\"b\";s:14:\"hapus.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:89;a:4:{s:1:\"a\";i:98;s:1:\"b\";s:15:\"sampah.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:90;a:4:{s:1:\"a\";i:99;s:1:\"b\";s:22:\"lihat.message.pengguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:91;a:4:{s:1:\"a\";i:100;s:1:\"b\";s:22:\"buka.message.penggguna\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:92;a:4:{s:1:\"a\";i:101;s:1:\"b\";s:15:\"lihat.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:93;a:4:{s:1:\"a\";i:102;s:1:\"b\";s:16:\"tambah.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:94;a:4:{s:1:\"a\";i:103;s:1:\"b\";s:14:\"edit.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:95;a:4:{s:1:\"a\";i:104;s:1:\"b\";s:15:\"hapus.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:96;a:4:{s:1:\"a\";i:105;s:1:\"b\";s:16:\"sampah.testimoni\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:97;a:4:{s:1:\"a\";i:106;s:1:\"b\";s:16:\"lihat.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:98;a:4:{s:1:\"a\";i:107;s:1:\"b\";s:17:\"tambah.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:99;a:4:{s:1:\"a\";i:108;s:1:\"b\";s:15:\"edit.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:100;a:4:{s:1:\"a\";i:109;s:1:\"b\";s:16:\"hapus.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:101;a:4:{s:1:\"a\";i:110;s:1:\"b\";s:17:\"sampah.pertanyaan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:102;a:4:{s:1:\"a\";i:111;s:1:\"b\";s:13:\"lihat.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:103;a:4:{s:1:\"a\";i:112;s:1:\"b\";s:14:\"tambah.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:104;a:4:{s:1:\"a\";i:113;s:1:\"b\";s:12:\"edit.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:105;a:4:{s:1:\"a\";i:114;s:1:\"b\";s:13:\"hapus.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:106;a:4:{s:1:\"a\";i:115;s:1:\"b\";s:14:\"sampah.anggota\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:107;a:4:{s:1:\"a\";i:116;s:1:\"b\";s:13:\"lihat.sponsor\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:108;a:4:{s:1:\"a\";i:117;s:1:\"b\";s:14:\"tambah.sponsor\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:109;a:4:{s:1:\"a\";i:118;s:1:\"b\";s:13:\"hapus.sponsor\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:110;a:4:{s:1:\"a\";i:119;s:1:\"b\";s:14:\"sampah.sponsor\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:111;a:4:{s:1:\"a\";i:120;s:1:\"b\";s:9:\"Perizinan\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:112;a:4:{s:1:\"a\";i:121;s:1:\"b\";s:13:\"lihat.beranda\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:113;a:4:{s:1:\"a\";i:122;s:1:\"b\";s:12:\"edit.beranda\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:114;a:4:{s:1:\"a\";i:123;s:1:\"b\";s:13:\"lihat.tentang\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:115;a:4:{s:1:\"a\";i:124;s:1:\"b\";s:12:\"edit.tentang\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:116;a:4:{s:1:\"a\";i:125;s:1:\"b\";s:12:\"lihat.kontak\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:117;a:4:{s:1:\"a\";i:126;s:1:\"b\";s:11:\"edit.kontak\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:118;a:4:{s:1:\"a\";i:127;s:1:\"b\";s:13:\"lihat.welcome\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:119;a:4:{s:1:\"a\";i:128;s:1:\"b\";s:12:\"edit.welcome\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:120;a:4:{s:1:\"a\";i:129;s:1:\"b\";s:13:\"lihat.counter\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:121;a:4:{s:1:\"a\";i:130;s:1:\"b\";s:12:\"edit.counter\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:122;a:4:{s:1:\"a\";i:131;s:1:\"b\";s:20:\"lihat.privacy.policy\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:123;a:4:{s:1:\"a\";i:132;s:1:\"b\";s:19:\"edit.privacy.policy\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:2:{i:0;i:9;i:1;i:11;}}i:124;a:4:{s:1:\"a\";i:133;s:1:\"b\";s:24:\"lihat.logAktivitas.admin\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:125;a:4:{s:1:\"a\";i:134;s:1:\"b\";s:23:\"lihat.logAktivitas.user\";s:1:\"c\";s:5:\"admin\";s:1:\"r\";a:1:{i:0;i:9;}}i:126;a:3:{s:1:\"a\";i:135;s:1:\"b\";s:21:\"approve.infoPemesanan\";s:1:\"c\";s:5:\"admin\";}}s:5:\"roles\";a:3:{i:0;a:3:{s:1:\"a\";i:9;s:1:\"b\";s:11:\"super_admin\";s:1:\"c\";s:5:\"admin\";}i:1;a:3:{s:1:\"a\";i:10;s:1:\"b\";s:5:\"admin\";s:1:\"c\";s:5:\"admin\";}i:2;a:3:{s:1:\"a\";i:11;s:1:\"b\";s:6:\"Editor\";s:1:\"c\";s:5:\"admin\";}}}', 1745658080);
 
 -- --------------------------------------------------------
 
@@ -789,7 +837,7 @@ CREATE TABLE `counter_items` (
 --
 
 INSERT INTO `counter_items` (`id`, `item1_number`, `item1_text`, `item2_number`, `item2_text`, `item3_number`, `item3_text`, `item4_number`, `item4_text`, `status`, `created_at`, `updated_at`) VALUES
-(1, '40', 'Destinasi', '1200', 'Klien', '130', 'Paket', '60', 'Timbal Balik', 'Show', '2024-11-25 06:23:14', '2025-02-17 07:26:08');
+(1, '40', 'Destinasi', '1200', 'Klien', '130', 'Paket', '60', 'Timbal Balik', 'Hide', '2024-11-25 06:23:14', '2025-04-25 02:56:16');
 
 -- --------------------------------------------------------
 
@@ -990,7 +1038,7 @@ CREATE TABLE `home_items` (
 --
 
 INSERT INTO `home_items` (`id`, `destination_heading`, `destination_subheading`, `destination_status`, `featured_status`, `package_heading`, `package_subheading`, `package_status`, `testimonial_heading`, `testimonial_subheading`, `testimonial_background`, `testimonial_status`, `blog_heading`, `blog_subheading`, `blog_status`, `sponsor_heading`, `sponsor_status`, `created_at`, `updated_at`) VALUES
-(1, 'Tujuan Populer', 'Jelajahi tujuan perjalanan kami yang paling populer di seluruh dunia', 'Show', 'Show', 'Paket Terbaru', 'Jelajahi paket perjalanan terbaru kami di seluruh dunia', 'Show', 'Testimoni Klien', 'Lihat apa yang klien kami katakan tentang pengalaman mereka bersama kami', 'testimonial_1734160718.jpg', 'Show', 'Berita Terbaru', 'Simak berita dan update terbaru dari postingan blog kami', 'Show', 'Disponsori oleh', 'Show', '2024-12-13 22:08:44', '2025-02-17 06:46:00');
+(1, 'Tujuan Populer', 'Jelajahi tujuan perjalanan kami yang paling populer di seluruh dunia', 'Hide', 'Hide', 'Paket Terbaru', 'Jelajahi paket perjalanan terbaru kami di seluruh dunia', 'Hide', 'Testimoni Klien', 'Lihat apa yang klien kami katakan tentang pengalaman mereka bersama kami', 'testimonial_1734160718.jpg', 'Hide', 'Berita Terbaru', 'Simak berita dan update terbaru dari postingan blog kami', 'Hide', 'Disponsori oleh', 'Hide', '2024-12-13 22:08:44', '2025-04-25 02:57:51');
 
 -- --------------------------------------------------------
 
@@ -1219,7 +1267,8 @@ CREATE TABLE `model_has_roles` (
 
 INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (9, 'App\\Models\\Admin', 1),
-(10, 'App\\Models\\Admin', 2);
+(10, 'App\\Models\\Admin', 2),
+(11, 'App\\Models\\Admin', 4);
 
 -- --------------------------------------------------------
 
@@ -1751,7 +1800,8 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 (131, 'lihat.privacy.policy', 'admin', '2025-04-23 01:56:36', '2025-04-23 03:29:18'),
 (132, 'edit.privacy.policy', 'admin', '2025-04-23 01:56:45', '2025-04-23 03:29:46'),
 (133, 'lihat.logAktivitas.admin', 'admin', '2025-04-23 01:57:30', '2025-04-23 03:27:58'),
-(134, 'lihat.logAktivitas.user', 'admin', '2025-04-23 01:57:46', '2025-04-23 03:27:44');
+(134, 'lihat.logAktivitas.user', 'admin', '2025-04-23 01:57:46', '2025-04-23 03:27:44'),
+(135, 'approve.infoPemesanan', 'admin', '2025-04-23 19:49:51', '2025-04-23 19:49:51');
 
 -- --------------------------------------------------------
 
@@ -1844,7 +1894,8 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
 (9, 'super_admin', 'admin', '2025-04-23 02:09:35', '2025-04-23 02:09:35'),
-(10, 'admin', 'admin', '2025-04-23 02:39:39', '2025-04-23 02:39:39');
+(10, 'admin', 'admin', '2025-04-23 02:39:39', '2025-04-23 02:39:39'),
+(11, 'Editor', 'admin', '2025-04-25 01:48:25', '2025-04-25 01:48:25');
 
 -- --------------------------------------------------------
 
@@ -1865,7 +1916,6 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (7, 9),
 (7, 10),
 (8, 9),
-(8, 10),
 (9, 9),
 (10, 9),
 (11, 9),
@@ -1876,8 +1926,11 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (16, 9),
 (17, 9),
 (19, 9),
+(19, 11),
 (21, 9),
+(21, 11),
 (22, 9),
+(22, 11),
 (23, 9),
 (24, 9),
 (25, 9),
@@ -1887,59 +1940,113 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (29, 9),
 (30, 9),
 (31, 9),
+(31, 11),
 (32, 9),
+(32, 11),
 (33, 9),
+(33, 11),
 (34, 9),
+(34, 11),
 (35, 9),
+(35, 11),
 (36, 9),
+(36, 11),
 (37, 9),
+(37, 11),
 (38, 9),
+(38, 11),
 (39, 9),
+(39, 11),
 (40, 9),
+(40, 11),
 (41, 9),
+(41, 11),
 (42, 9),
+(42, 11),
 (43, 9),
+(43, 11),
 (44, 9),
+(44, 11),
 (45, 9),
+(45, 11),
 (46, 9),
+(46, 11),
 (47, 9),
+(47, 11),
 (48, 9),
+(48, 11),
 (49, 9),
+(49, 11),
 (50, 9),
+(50, 11),
 (51, 9),
+(51, 11),
 (52, 9),
+(52, 11),
 (53, 9),
+(53, 11),
 (54, 9),
+(54, 11),
 (55, 9),
+(55, 11),
 (56, 9),
+(56, 11),
 (57, 9),
+(57, 11),
 (58, 9),
+(58, 11),
 (59, 9),
+(59, 11),
 (60, 9),
+(60, 11),
 (61, 9),
+(61, 11),
 (62, 9),
+(62, 11),
 (63, 9),
+(63, 11),
 (64, 9),
+(64, 11),
 (65, 9),
+(65, 11),
 (66, 9),
+(66, 11),
 (67, 9),
+(67, 11),
 (68, 9),
+(68, 11),
 (69, 9),
+(69, 11),
 (70, 9),
+(70, 11),
 (71, 9),
+(71, 11),
 (72, 9),
+(72, 11),
 (73, 9),
+(73, 11),
 (74, 9),
+(74, 11),
 (75, 9),
+(75, 11),
 (76, 9),
+(76, 11),
 (77, 9),
+(77, 11),
 (78, 9),
+(78, 11),
 (79, 9),
+(79, 11),
 (80, 9),
+(80, 11),
 (81, 9),
+(81, 11),
 (82, 9),
+(82, 11),
 (83, 9),
+(83, 11),
 (84, 9),
+(84, 11),
 (85, 9),
 (86, 9),
 (87, 9),
@@ -1962,32 +2069,53 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (104, 9),
 (105, 9),
 (106, 9),
+(106, 11),
 (107, 9),
+(107, 11),
 (108, 9),
+(108, 11),
 (109, 9),
+(109, 11),
 (110, 9),
+(110, 11),
 (111, 9),
 (112, 9),
 (113, 9),
 (114, 9),
 (115, 9),
 (116, 9),
+(116, 11),
 (117, 9),
+(117, 11),
 (118, 9),
+(118, 11),
 (119, 9),
+(119, 11),
 (120, 9),
 (121, 9),
+(121, 11),
 (122, 9),
+(122, 11),
 (123, 9),
+(123, 11),
 (124, 9),
+(124, 11),
 (125, 9),
+(125, 11),
 (126, 9),
+(126, 11),
 (127, 9),
+(127, 11),
 (128, 9),
+(128, 11),
 (129, 9),
+(129, 11),
 (130, 9),
+(130, 11),
 (131, 9),
+(131, 11),
 (132, 9),
+(132, 11),
 (133, 9),
 (134, 9);
 
@@ -2036,8 +2164,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('L3Dt9xpcvP0wQmhaKqey7nAoP40saghqkB4RKxWy', NULL, '192.168.1.9', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiRjZ5Mlp6MzZndGgwZlE0SzRyY2VYSjVSTWFlUndrRVNXT1p3bGVjMCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDM6Imh0dHA6Ly8xOTIuMTY4LjEuNDo4MDAwL2FkbWluL3JvbGVzLzEwL2VkaXQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1745404482),
-('vZSnsf29on61buwAJFGMaZ0ByCx4e2ei3Yz8esMK', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiVTVwOWQwUU9wbUNSSWNIZGMzS2QwRDFYZ2pGTlU1bnJWeTRzdXo1eiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9yb2xlcy9jcmVhdGUiO31zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1745403799);
+('JRq06esG8wogVtiAOMyR2BTX4Qy8aRtnVWu13uRv', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiWkFhd1VmZkN4bUU3M2pJNGVtbFh6Q2dEVXdtT0Vlelk1QU9yZG1lbyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9sb2dpbiI7fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NDt9', 1745578297);
 
 -- --------------------------------------------------------
 
@@ -2325,7 +2452,7 @@ CREATE TABLE `welcome_items` (
 --
 
 INSERT INTO `welcome_items` (`id`, `heading`, `description`, `button_text`, `button_link`, `photo`, `video`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Selamat datang di TripSummit', '<p><span style=\"color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #f2f2f2;\">Di TripSummit, misi kami adalah mewujudkan impian perjalanan dengan menyediakan pengalaman yang personal dan berkesan. Kami memanfaatkan keahlian dan mitra tepercaya kami untuk memastikan setiap perjalanan berjalan lancar dan menyenangkan.</span></p>\r\n<p><span style=\"color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #f2f2f2;\">Kami percaya bahwa perjalanan dapat menumbuhkan pertumbuhan pribadi dan pemahaman budaya. Tujuan kami adalah membantu klien menjelajahi destinasi baru dan terhubung dengan beragam budaya. Kami mempromosikan perjalanan berkelanjutan untuk memberikan dampak positif bagi masyarakat dan melestarikan keindahan planet kita.</span></p>', 'Baca selengkapnya', '#', 'welcome_item_1732528236.jpg', 'Rh9Kz2EHKnw', 'Show', '2024-11-24 20:48:59', '2025-02-17 06:44:35');
+(1, 'Selamat datang di TripSummit', '<p><span style=\"color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #f2f2f2;\">Di TripSummit, misi kami adalah mewujudkan impian perjalanan dengan menyediakan pengalaman yang personal dan berkesan. Kami memanfaatkan keahlian dan mitra tepercaya kami untuk memastikan setiap perjalanan berjalan lancar dan menyenangkan.</span></p>\r\n<p><span style=\"color: #333333; font-family: Roboto, sans-serif; font-size: 15px; background-color: #f2f2f2;\">Kami percaya bahwa perjalanan dapat menumbuhkan pertumbuhan pribadi dan pemahaman budaya. Tujuan kami adalah membantu klien menjelajahi destinasi baru dan terhubung dengan beragam budaya. Kami mempromosikan perjalanan berkelanjutan untuk memberikan dampak positif bagi masyarakat dan melestarikan keindahan planet kita.</span></p>', 'Baca selengkapnya', '#', 'welcome_item_1732528236.jpg', 'Rh9Kz2EHKnw', 'Hide', '2024-11-24 20:48:59', '2025-04-25 02:55:55');
 
 -- --------------------------------------------------------
 
@@ -2725,13 +2852,13 @@ ALTER TABLE `accommodations`
 -- AUTO_INCREMENT untuk tabel `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=420;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=466;
 
 --
 -- AUTO_INCREMENT untuk tabel `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `amenities`
@@ -2893,7 +3020,7 @@ ALTER TABLE `package_videos`
 -- AUTO_INCREMENT untuk tabel `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 
 --
 -- AUTO_INCREMENT untuk tabel `personal_access_tokens`
@@ -2917,7 +3044,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT untuk tabel `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `rooms`

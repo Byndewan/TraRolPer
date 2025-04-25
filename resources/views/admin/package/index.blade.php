@@ -66,6 +66,7 @@
                                                             @endif
                                                         </div>
                                                     </td>
+                                                    @endif
                                                     @if (auth('admin')->user()?->can('edit.paket') || auth('admin')->user()?->can('hapus.paket'))
                                                     <td class="pt_10 pb_10">
                                                         @if (auth('admin')->user()?->can('edit.paket'))

@@ -23,7 +23,7 @@
                     <select name="admin_id" class="form-select" required>
                         <option value="">-- Pilih Admin --</option>
                         @foreach($admins as $admin)
-                            <option value="{{ $admin->id }}">{{ $admin->name }} ({{ $admin->email }})</option>
+                            <option value="{{ $admin->id }}">{{ $admin->name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -33,17 +33,45 @@
                     <select name="role" class="form-select" required>
                         <option value="">-- Pilih Role --</option>
                         @foreach($roles as $role)
-                            <option value="{{ $role->name }}">{{ $role->name }}</option>
+                            @if($role->name !== 'super_admin')
+                                <option value="{{ $role->name }}">{{ $role->name }}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>
 
-                <div class="mb-3">
-                    <button type="submit" class="btn btn-success">
-                        <i class="fas fa-check"></i> Assign Role
-                    </button>
-                </div>
+                <button type="submit" class="btn btn-success">Assign Role</button>
             </form>
+
+
+            <script>
+                const admins = @json($admins);
+                const allRoles = @json($roles);
+
+                const adminSelect = document.getElementById('adminSelect');
+                const roleSelect = document.getElementById('roleSelect');
+
+                adminSelect.addEventListener('change', function () {
+                    const selectedAdminId = this.value;
+                    const selectedAdmin = admins.find(admin => admin.id == selectedAdminId);
+                    const assignedRoles = selectedAdmin?.roles.map(r => r.name) ?? [];
+
+                    // Kosongkan dulu opsi role
+                    roleSelect.innerHTML = '<option value="">-- Pilih Role --</option>';
+
+                    // Tampilkan hanya role yang belum dimiliki
+                    allRoles.forEach(role => {
+                        if (!assignedRoles.includes(role.name)) {
+                            const opt = document.createElement('option');
+                            opt.value = role.name;
+                            opt.textContent = role.name;
+                            roleSelect.appendChild(opt);
+                        }
+                    });
+                });
+            </script>
+
+
         </div>
 
         <hr class="my-5">
@@ -59,7 +87,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($admins as $admin)
+                @foreach($adminShows as $admin)
                     <tr>
                         <td>{{ $admin->name }}</td>
                         <td>{{ $admin->email }}</td>
@@ -70,15 +98,16 @@
                                     @method('DELETE')
                                     <span class="badge bg-primary">
                                         {{ $role->name }}
+                                        @if($role->name !== 'super_admin')
                                         <button type="submit" style="border: none; background: red; border-radius: 50%; color: white; margin-left: 5px; padding: 0 5px;" title="Hapus Role" onclick="return confirm('Yakin ingin menghapus role ini dari user?')">
                                             &times;
                                         </button>
+                                        @endif
                                     </span>
                                 </form>
                             @empty
                                 <span class="text-muted">Belum ada role</span>
                             @endforelse
-
                         </td>
                     </tr>
                 @endforeach

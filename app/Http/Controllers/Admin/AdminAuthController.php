@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\AccessHelper;
 use App\Http\Controllers\Controller;
 use App\Mail\Websitemail;
 use App\Models\admin;
@@ -19,7 +20,7 @@ class AdminAuthController extends Controller
         return view('admin.auth2.login');
     }
 
-     public function login_submit(Request $request)
+    public function login_submit(Request $request)
     {
         $request->validate([
             'email' => ['required', 'email'],
@@ -33,10 +34,54 @@ class AdminAuthController extends Controller
         ];
 
         if (Auth::guard('admin')->attempt($data)) {
-            activity()->causedBy(Auth::guard('admin')->user())->event('login')->log('Admin ' . Auth::guard('admin')->user()->name . ' Melakukan login');
-            return redirect()->route('admin_dashboard')->with('success', 'login is successfull!');
+            $admin = Auth::guard('admin')->user();
+
+            $menuRoutes = [
+                'admin_dashboard',
+                'admin.laporan.pemesanan',
+                'admin_setting_index',
+                'admin_slider_index',
+                'admin_welcome_item_index',
+                'admin_feature_index',
+                'admin_counter_item_index',
+                'admin_testimonial_index',
+                'admin_team_member_index',
+                'admin_faq_index',
+                'admin_blog_category_index',
+                'admin_post_index',
+                'admin_destination_index',
+                'admin_package_index',
+                'admin_review_index',
+                'comment.index',
+                'admin_tour_index',
+                'admin_subscribers',
+                'admin_subscriber_send_email',
+                'admin_message',
+                'admin_users',
+                'sponsor_index',
+                'admin_admins',
+                'admin_home_page_item_index',
+                'admin_about_item_index',
+                'admin_contact_item_index',
+                'admin_term_privacy_item_index',
+                'log.admin',
+                'log.user',
+            ];
+
+            $accessibleRoute = AccessHelper::getFirstAccessibleRoute($admin, $menuRoutes);
+
+            if ($accessibleRoute) {
+                activity()
+                    ->causedBy($admin)
+                    ->event('login')
+                    ->log('Admin ' . $admin->name . ' melakukan login');
+
+                return redirect()->route($accessibleRoute)->with('success', 'Login berhasil dan dialihkan ke halaman yang diizinkan.');
+            } else {
+                return redirect()->route('admin_login')->with('error', 'Login gagal karena Anda tidak memiliki akses apapun.');
+            }
         } else {
-            return redirect()->route('admin_login')->with('error', 'The information you entered is incorrect! Please try again!');
+            return redirect()->route('admin_login')->with('error', 'Email atau password salah!');
         }
     }
 

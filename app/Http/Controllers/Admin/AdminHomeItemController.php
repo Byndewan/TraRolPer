@@ -54,11 +54,17 @@ class AdminHomeItemController extends Controller
         $obj->featured_status = $request->featured_status;
         $obj->package_heading = $request->package_heading;
         $obj->package_subheading = $request->package_subheading;
+        $obj->package_status = $request->package_status;
+
         $obj->testimonial_heading = $request->testimonial_heading;
         $obj->testimonial_subheading = $request->testimonial_subheading;
+        $obj->testimonial_status = $request->testimonial_status;
+
         $obj->blog_heading = $request->blog_heading;
         $obj->blog_subheading = $request->blog_subheading;
         $obj->blog_heading = $request->blog_heading;
+        $obj->blog_status = $request->blog_status;
+
         $obj->sponsor_heading = $request->sponsor_heading;
         $obj->sponsor_status = $request->sponsor_status;
         $obj->save();

@@ -48,7 +48,7 @@
                                                         <span class="badge bg-info text-white">{{ $permission->name }}</span>
                                                     @endforeach
                                                     @if($totalPermissions > $maxPermissionToShow)
-                                                        <span class="badge bg-secondary">
+                                                        <span class="badge bg-secondary mt-1 mb-1">
                                                             +{{ $totalPermissions - $maxPermissionToShow }} lainnya
                                                         </span>
                                                     @endif
