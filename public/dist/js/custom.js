@@ -94,7 +94,6 @@
         reader.readAsDataURL(file);
     }
 
-    // Tutup preview saat klik di luar
     document.addEventListener('click', (e) => {
         previewContainers.forEach(container => {
             if (!e.target.closest('.upload-wrapper') && container.classList.contains('active')) {
@@ -105,7 +104,7 @@
 
         document.querySelectorAll(".toggle-password").forEach(button => {
             button.addEventListener("click", function () {
-                let passwordField = this.previousElementSibling; // Ambil input sebelum tombol
+                let passwordField = this.previousElementSibling;
                 let icon = this.querySelector("i");
 
                 if (passwordField.type === "password") {

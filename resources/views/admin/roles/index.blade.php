@@ -36,19 +36,29 @@
                                             @foreach ($roles as $role)
 
                                             @php
+                                                $permissions = $role->permissions;
                                                 $maxPermissionToShow = 10;
-                                                $totalPermissions = count($role->permissions);
+                                                $totalPermissions = $permissions->count();
                                             @endphp
 
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $role->name }}</td>
                                                 <td>
-                                                    @foreach($role->permissions->take($maxPermissionToShow) as $permission)
+                                                    @foreach($permissions->take($maxPermissionToShow) as $permission)
                                                         <span class="badge bg-info text-white">{{ $permission->name }}</span>
                                                     @endforeach
+
                                                     @if($totalPermissions > $maxPermissionToShow)
-                                                        <span class="badge bg-secondary mt-1 mb-1">
+                                                        <span id="extra-permissions-{{ $role->id }}" class="d-none">
+                                                            @foreach($permissions->skip($maxPermissionToShow) as $permission)
+                                                                <span class="badge bg-info text-white mt-1">{{ $permission->name }}</span>
+                                                            @endforeach
+                                                        </span>
+
+                                                        <span class="badge bg-secondary mt-1 mb-1 toggle-permissions"
+                                                              data-role-id="{{ $role->id }}"
+                                                              style="cursor: pointer;">
                                                             +{{ $totalPermissions - $maxPermissionToShow }} lainnya
                                                         </span>
                                                     @endif
@@ -77,4 +87,25 @@
             </div>
         </section>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.toggle-permissions').forEach(button => {
+                button.addEventListener('click', function () {
+                    const roleId = this.getAttribute('data-role-id');
+                    const extraPermissions = document.getElementById('extra-permissions-' + roleId);
+
+                    if (extraPermissions.classList.contains('d-none')) {
+                        extraPermissions.classList.remove('d-none');
+                        this.innerText = 'Sembunyikan';
+                    } else {
+                        extraPermissions.classList.add('d-none');
+                        this.innerText = '+' + (extraPermissions.children.length) + ' lainnya';
+                    }
+                });
+            });
+        });
+    </script>
+
+
 @endsection

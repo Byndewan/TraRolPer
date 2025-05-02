@@ -39,7 +39,7 @@ class AdminTrashController extends Controller
     }
     public function SliderTrashDelete($id){
         $slider = Slider::withTrashed()->find($id);
-        unlink(public_path('uploads/'.$slider->photo));
+        unlink(public_path('trash/'.$slider->photo));
         $slider->forceDelete();
 
         return redirect()->back()->with('success', 'Slider berhasil di hapus');
@@ -119,7 +119,7 @@ class AdminTrashController extends Controller
 
     public function DestinationTrashRestore($id){
         $destination = Destination::withTrashed()->find($id);
-        File::move(public_path('trash/'.$destination->featured_photo), public_path('uploads/'.$destination->featured_photo));
+        File::move(public_path('trash/'.$destination->featured_photo), public_path('trash/'.$destination->featured_photo));
         $destination->restore();
 
         return redirect()->back()->with('success', 'Destination berhasil di pulihkan');
@@ -143,7 +143,7 @@ class AdminTrashController extends Controller
 
     public function DestinationPhotoTrashRestore($id){
         $destination = DestinationPhoto::withTrashed()->find($id);
-        File::move(public_path('trash/'.$destination->photo), public_path('uploads/'.$destination->photo));
+        File::move(public_path('trash/'.$destination->photo), public_path('trash/'.$destination->photo));
         $destination->restore();
 
         return redirect()->back()->with('success', 'Destination photo berhasil di pulihkan');
@@ -211,7 +211,7 @@ class AdminTrashController extends Controller
 
     public function BlogTrashRestore($id){
         $blog = Post::withTrashed()->find($id);
-        File::move(public_path('trash/'.$blog->photo), public_path('uploads/'.$blog->photo));
+        File::move(public_path('trash/'.$blog->photo), public_path('trash/'.$blog->photo));
         $blog->restore();
 
         return redirect()->back()->with('success', 'Blog berhasil di pulihkan');
@@ -234,8 +234,8 @@ class AdminTrashController extends Controller
 
     public function PackageTrashRestore($id){
         $package = Package::withTrashed()->find($id);
-        File::move(public_path('trash/'.$package->featured_photo),public_path('uploads/').$package->featured_photo);
-        File::move(public_path('trash/'.$package->banner),public_path('uploads/').$package->banner);
+        File::move(public_path('trash/'.$package->featured_photo),public_path('trash/').$package->featured_photo);
+        File::move(public_path('trash/'.$package->banner),public_path('trash/').$package->banner);
         $package->restore();
 
         return redirect()->back()->with('success', 'Package berhasil di pulihkan');
@@ -324,7 +324,7 @@ class AdminTrashController extends Controller
 
     public function PackagePhotoTrashRestore($id){
         $package = PackagePhoto::withTrashed()->find($id);
-        File::move(public_path('trash/'.$package->photo), public_path('uploads/'.$package->photo));
+        File::move(public_path('trash/'.$package->photo), public_path('trash/'.$package->photo));
         $package->restore();
 
         return redirect()->back()->with('success', 'Package photo berhasil di pulihkan');
@@ -430,7 +430,7 @@ class AdminTrashController extends Controller
 
     public function UserTrashRestore($id){
         $user = User::withTrashed()->find($id);
-        File::move(public_path('trash/'.$user->photo), public_path('uploads/'.$user->photo));
+        File::move(public_path('trash/'.$user->photo), public_path('trash/'.$user->photo));
         $user->restore();
 
         return redirect()->back()->with('success', 'User berhasil di pulihkan');
@@ -447,7 +447,7 @@ class AdminTrashController extends Controller
     }
     public function TestimonialTrashRestore($id){
         $testimonial = Testimonial::withTrashed()->find($id);
-        File::move(public_path('trash/'.$testimonial->photo), public_path('uploads/'.$testimonial->photo));
+        File::move(public_path('trash/'.$testimonial->photo), public_path('trash/'.$testimonial->photo));
         $testimonial->restore();
         return redirect()->back()->with('success','Testimonial berhasil di pulihkan!');
     }
@@ -477,7 +477,7 @@ class AdminTrashController extends Controller
     }
     public function TeamMemberTrashRestore($id){
         $team_member = TeamMember::withTrashed()->find($id);
-        File::move(public_path('trash/'.$team_member->photo), public_path('uploads/'.$team_member->photo));
+        File::move(public_path('trash/'.$team_member->photo), public_path('trash/'.$team_member->photo));
         $team_member->restore();
         return redirect()->back()->with('success', 'Team member berhasil di pulihkan');
     }
@@ -493,7 +493,7 @@ class AdminTrashController extends Controller
     }
     public function SponsorTrashRestore($id){
         $sponsor = Sponsor::withTrashed()->find($id);
-        File::move(public_path('trash/'.$sponsor->photo), public_path('uploads/').$sponsor->photo);
+        File::move(public_path('trash/'.$sponsor->photo), public_path('trash/').$sponsor->photo);
         $sponsor->restore();
         return redirect()->back()->with('success', 'Sponsor berhasil di pulihkan');
     }

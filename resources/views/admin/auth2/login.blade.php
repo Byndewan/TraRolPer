@@ -1,6 +1,7 @@
 @extends('admin.layout.master')
 
 @section('main_content')
+
     <body>
         <div id="app">
             <div class="main-wrapper">
@@ -26,11 +27,13 @@
                                             </div> --}}
                                             <div class="form-group position-relative">
                                                 <input type="password" class="form-control" id="password" name="password" placeholder="Kata Sandi">
-                                                <button type="button" id="togglePassword" class="btn btn-light position-absolute"
+                                                <button type="button" id="togglePassword"
+                                                    class="btn btn-light position-absolute"
                                                     style="right: 10px; top: 50%; transform: translateY(-50%); border: none;">
                                                     <i class="fas fa-eye"></i>
                                                 </button>
                                             </div>
+
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-primary btn-lg w_100_p">
                                                     Login
@@ -49,4 +52,22 @@
                         </div>
                     </div>
                 </section>
+
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const togglePassword = document.getElementById("togglePassword");
+                        const passwordField = document.getElementById("password");
+                        const icon = togglePassword.querySelector("i");
+
+                        togglePassword.addEventListener("click", function () {
+                            const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
+                            passwordField.setAttribute("type", type);
+
+                            icon.classList.toggle("fa-eye");
+                            icon.classList.toggle("fa-eye-slash");
+                        });
+                    });
+                </script>
+
             @endsection

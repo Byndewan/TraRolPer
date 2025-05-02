@@ -48,6 +48,7 @@
                                                         <a href="{{ route('admin_blog_category_delete', $blog_category->id) }}" class="btn btn-danger" onClick="return confirm('Category Blog will be move to trash. Are you sure?');"><i class="fas fa-trash"></i></a>
                                                         @endif
                                                     </td>
+                                                    @endif
                                                 </tr>
                                                 @endforeach
                                             </tbody>

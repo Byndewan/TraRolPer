@@ -8,7 +8,7 @@
             <div class="section-header justify-content-between">
                 <h1>Tambah Fasilitas</h1>
                 <div class="ml-auto">
-                    <a href="{{ route('admin_amenity_index') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Kembali</a>
+                    <a href="{{ route('admin_amenity_index') }}" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Kembali</a>
                 </div>
             </div>
             <div class="section-body">

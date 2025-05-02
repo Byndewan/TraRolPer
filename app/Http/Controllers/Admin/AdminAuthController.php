@@ -145,9 +145,6 @@ class AdminAuthController extends Controller
         //     $admin->password = Hash::make($request->password);
         // }
 
-        // Ambil admin yang akan diperbarui
-        $admin = Admin::findOrFail(Auth::guard('admin')->user()->id);
-
         // Simpan data lama
         $oldData = $admin->getAttributes();
 

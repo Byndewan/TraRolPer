@@ -31,7 +31,7 @@
                                                     @if (auth('admin')->user()?->can('lihat.galeryFoto.destinasi') || auth('admin')->user()?->can('lihat.galeryVideo.destinasi'))
                                                     <th>Galeri</th>
                                                     @endif
-                                                    @if (auth('admin')->user()?->can('edit.destination') || auth('admin')->user()?->can('hapus.destination'))
+                                                    @if (auth('admin')->user()?->can('edit.destinasi') || auth('admin')->user()?->can('hapus.destinasi'))
                                                     <th>Aksi</th>
                                                     @endif
                                                 </tr>
@@ -54,12 +54,12 @@
                                                         @endif
                                                     </td>
                                                     @endif
-                                                    @if (auth('admin')->user()?->can('edit.destination') || auth('admin')->user()?->can('hapus.destination'))
+                                                    @if (auth('admin')->user()?->can('edit.destinasi') || auth('admin')->user()?->can('hapus.destinasi'))
                                                     <td class="pt_10 pb_10">
-                                                        @if (auth('admin')->user()?->can('edit.destination'))
+                                                        @if (auth('admin')->user()?->can('edit.destinasi'))
                                                         <a href="{{ route('admin_destination_edit', $destination->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                                                         @endif
-                                                        @if (auth('admin')->user()?->can('hapus.destination'))
+                                                        @if (auth('admin')->user()?->can('hapus.destinasi'))
                                                         <a href="{{ route('admin_destination_delete', $destination->id) }}" class="btn btn-danger" onClick="return confirm('Destination will be move to trash. Are you sure?');"><i class="fas fa-trash"></i></a>
                                                         @endif
                                                     </td>

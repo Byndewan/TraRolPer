@@ -8,7 +8,7 @@
             <div class="section-header justify-content-between">
                 <h1>Video {{ $package->name }}</h1>
                 <div class="ml-auto">
-                    <a href="{{ route('admin_package_index') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Kembali</a>
+                    <a href="{{ route('admin_package_index') }}" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Kembali</a>
                     @if (auth('admin')->user()?->can('sampah.galeryVideo.paket'))
                         <a href="{{ route('admin_package_video_trash') }}" class="btn btn-danger"><i class="fas fa-trash"></i> Sampah ( {{ $trashCount }} )</a>
                     @endif

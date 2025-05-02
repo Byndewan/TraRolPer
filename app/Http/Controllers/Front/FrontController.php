@@ -312,7 +312,7 @@ class FrontController extends Controller
         $message .= '<b>Email:<b><br>' . $request->email . '<br><br>';
         $message .= '<b>Comment:<b><br>' . nl2br($request->comment) . '<br>';
 
-        Mail::to($admin->email)->send(new Mailable)->send(new Websitemail($subject, $message));
+        Mail::to($admin->email)->send(new Websitemail($subject, $message));
 
         return redirect()->back()->with('success', 'Your message is submitted successfully. We will contact you soon.');
     }

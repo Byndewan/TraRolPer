@@ -22,7 +22,9 @@
                                                     <th>Foto Pengguna</th>
                                                     <th>Email Pengguna</th>
                                                     <th>No Telepon Pengguna</th>
+                                                    @if (auth('admin')->user()?->can('buka.message.penggguna'))
                                                     <th>Aksi</th>
+                                                    @endif
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -45,9 +47,11 @@
                                                     <td>
                                                         {{ $item->user->phone }}
                                                     </td>
-                                                    <td class="pt_10 pb_10">
-                                                        <a href="{{ route('admin_message_detail', $item->id) }}" class="btn btn-primary">Buka Obrolan</a>
-                                                    </td>
+                                                    @if (auth('admin')->user()?->can('buka.message.penggguna'))
+                                                        <td class="pt_10 pb_10">
+                                                            <a href="{{ route('admin_message_detail', $item->id) }}" class="btn btn-primary">Buka Obrolan</a>
+                                                        </td>
+                                                    @endif
                                                 </tr>
                                                 @endforeach
                                             </tbody>

@@ -316,7 +316,7 @@ Route::middleware(['admin:admin'])
         Route::get('/users/delete/{id}', [AdminUserController::class, 'user_delete'])->name('admin_user_delete')->middleware('permission:hapus.pengguna,admin');
 
         Route::get('/message', [AdminUserController::class, 'message'])->name('admin_message')->middleware('permission:lihat.message.pengguna,admin');
-        Route::get('/message-detail/{id}', [AdminUserController::class, 'message_detail'])->name('admin_message_detail')->middleware('permission:buka.message.pengguna,admin');
+        Route::get('/message-detail/{id}', [AdminUserController::class, 'message_detail'])->name('admin_message_detail')->middleware('permission:buka.message.penggguna,admin');
         Route::post('/message-submit/{id}', [AdminUserController::class, 'message_submit'])->name('admin_message_submit');
 
         // Subscribers Section
