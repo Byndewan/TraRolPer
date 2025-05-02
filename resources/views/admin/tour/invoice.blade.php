@@ -1,100 +1,103 @@
 @extends('admin.layout.master')
 
 @section('main_content')
-    @include('admin.layout.nav')
-    @include('admin.layout.sidebar')
-        <div class="main-content">
-            <section class="section">
-                <div class="section-body">
-                    <div class="invoice">
-                        <h3>No Faktur :: {{ $booking->invoice_no }}</h3>
-                        <div class="invoice-print">
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <tbody>
-                                        <tr>
-                                            <td>No Faktur : </td>
-                                            <td>{{ $booking->invoice_no }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Pengguna Info : </td>
-                                            <td>
-                                                Nama : {{ $booking->user->name }}<br>
-                                                Email : {{ $booking->user->email }}<br>
-                                                Telpon : {{ $booking->user->phone }}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Disetujui Oleh : </td>
-                                            <td>
-                                                Nama : {{ Auth::guard('admin')->user()->name }}<br>
-                                                {{-- Email : {{ Auth::guard('admin')->user()->email }}<br> --}}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Infomasi Tur : </td>
-                                            <td>
-                                                Tanggal Mulai Tur :{{ $booking->tour->tour_start_date }}<br>
-                                                Tanggal Berakhir Tur :{{ $booking->tour->tour_end_date }}<br>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Infomasi Paket : </td>
-                                            <td>
-                                                Nama Paket : {{ $booking->package->name }}<br>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tanggal Pemesanan : </td>
-                                            <td>{{ $booking->created_at->format('d M Y') }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Metode Pembayaran : </td>
-                                            <td>
-                                                @if ($booking->payment_method == 'Midtrans')
-                                                <p> Non-tunai </p>
-                                                @elseif ($booking->payment_method == 'Cash')
-                                                <p> Cash </p>
-                                                @elseif ($booking->payment_method == 'Stripe')
-                                                <p> Stripe </p>
-                                                @elseif ($booking->payment_method == 'PayPal')
-                                                <p> Paypal </p>
-                                                @endif
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Status Pembayaran : </td>
-                                            <td>
-                                                @if ($booking->payment_status == 'Completed')
-                                                <span class="badge badge-success">Tuntas</span>
-                                            @elseif ($booking->payment_status == 'Pending')
-                                                <span class="badge badge-danger mb-3">Tertunda</span>
-                                            @elseif ($booking->payment_status == 'Cancel')
-                                                <span class="badge badge-warning">Dibatalkan</span>
-                                            @elseif ($booking->payment_status == 'Expired')
-                                                <span class="badge badge-secondary">Kadaluarsa</span>
-                                            @elseif ($booking->payment_status == 'Denied')
-                                                <span class="badge badge-danger">Ditolak</span>
-                                            @endif
-                                        </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jumlah Orang : </td>
-                                            <td>{{ $booking->total_person }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Total Bayar : </td>
-                                            <td>Rp. {{ number_format($booking->paid_amount) }}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="text-md-right">
-                            <a href="javascript:window.print();" class="btn btn-warning btn-icon icon-left text-white print-invoice-button"><i class="fas fa-print"></i> Cetak</a>
-                        </div>
+@include('admin.layout.nav')
+@include('admin.layout.sidebar')
+
+<div class="main-content">
+    <section class="section">
+        <div class="section-body">
+            <div class="invoice p-4 shadow-sm border rounded bg-white" id="print_area">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="text-uppercase">Faktur</h4>
+                    <span class="text-muted">No Faktur: <strong>{{ $booking->invoice_no }}</strong></span>
+                </div>
+
+                <hr class="invoice-above-table">
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <h6>Untuk:</h6>
+                        <p class="mb-1"><strong>{{ $booking->user->name }}</strong></p>
+                        <p class="mb-1">{{ $booking->user->email }}</p>
+                        <p class="mb-1">{{ $booking->user->phone }}</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <h6>Disetujui oleh:</h6>
+                        <p class="mb-1"><strong>{{ Auth::guard('admin')->user()->name }}</strong></p>
+                        {{-- <p class="mb-1">{{ Auth::guard('admin')->user()->email }}</p> --}}
+                        <p class="mb-1">Tanggal Pemesanan: {{ $booking->created_at->format('d M Y') }}</p>
                     </div>
                 </div>
-            </section>
+
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th class="w-25">Informasi Tur</th>
+                                <td>
+                                    Mulai: {{ $booking->tour->tour_start_date }} <br>
+                                    Berakhir: {{ $booking->tour->tour_end_date }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Nama Paket</th>
+                                <td>{{ $booking->package->name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Metode Pembayaran</th>
+                                <td>
+                                    @switch($booking->payment_method)
+                                        @case('Midtrans') Non-tunai @break
+                                        @case('Cash') Tunai @break
+                                        @case('Stripe') Stripe @break
+                                        @case('PayPal') PayPal @break
+                                        @default -
+                                    @endswitch
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Status Pembayaran</th>
+                                <td>
+                                    @switch($booking->payment_status)
+                                        @case('Completed')
+                                            <span class="badge badge-success">Tuntas</span>
+                                            @break
+                                        @case('Pending')
+                                            <span class="badge badge-danger">Tertunda</span>
+                                            @break
+                                        @case('Cancel')
+                                            <span class="badge badge-warning">Dibatalkan</span>
+                                            @break
+                                        @case('Expired')
+                                            <span class="badge badge-secondary">Kadaluarsa</span>
+                                            @break
+                                        @case('Denied')
+                                            <span class="badge badge-dark">Ditolak</span>
+                                            @break
+                                    @endswitch
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Jumlah Orang</th>
+                                <td>{{ $booking->total_person }}</td>
+                            </tr>
+                            <tr>
+                                <th>Total Bayar</th>
+                                <td><strong>Rp. {{ number_format($booking->paid_amount, 0, ',', '.') }}</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="text-md-end">
+                    <a href="javascript:window.print();" class="btn btn-primary print-invoice-button">
+                        <i class="fas fa-print me-1"></i> Cetak Faktur
+                    </a>
+                </div>
+            </div>
         </div>
+    </section>
+</div>
+
 @endsection

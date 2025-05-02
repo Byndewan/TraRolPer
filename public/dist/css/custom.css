@@ -417,6 +417,7 @@ td.social a {
 hr.invoice-above-table {
     display: none;
 }
+
 @media print {
     .main-sidebar,
     .navbar,
@@ -424,17 +425,26 @@ hr.invoice-above-table {
     .print-invoice-button,
     .section .section-title:before,
     hr.about-print-button {
-        display:none!important;
+        display: none !important;
     }
+
     .section .section-lead {
         margin-left: 0;
     }
+
     hr.invoice-above-table {
         display: block;
         margin-top: 20px;
         margin-bottom: 20px;
     }
+
+    .invoice {
+        box-shadow: none !important;
+        padding: 0 !important;
+        border: none !important;
+    }
 }
+
 
 /* TinyMCE Notification Off */
 .tox .tox-notification {
